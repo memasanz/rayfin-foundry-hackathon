@@ -38,12 +38,15 @@ Paste this next:
 Continue with section 2.2 only. Follow the generated app guidance.
 
 Register a fabric-semanticmodel connector named spendmodel for the
-existing, validated Northwind Spend Model belonging to my alias.
+validated semantic model created in exercise 1.
 Use the confirmed workspace and model IDs, not guessed identifiers.
 Use the template's registration workflow; do not hand-edit generated wiring.
 
 Prove live connectivity using its prescribed connector query tools.
 Discover tables, columns, measures, and measure descriptions.
+Map the metrics and fields used in this guide to the actual model.
+If a needed measure is missing, use semantic-model-authoring to add and
+validate it in my model before continuing.
 Validate queries for the four planned pages before writing UI code.
 Include a total-spend query and business-unit/category slices, comparing
 them with the validated model results from exercise 1.
