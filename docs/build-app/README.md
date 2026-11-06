@@ -165,6 +165,10 @@ For the detailed option, expect **five tables, four relationships, 15 measures, 
 
 Build a Rayfin app using the semantic model from the previous exercise. Continue in the same chat so the agent has your alias, workspace, and model details.
 
+**Example app:** The Opportunity tab shows spend KPIs, an illustrative savings waterfall, and a category opportunity worklist. Your layout may differ depending on the prompt you choose.
+
+![Example Spend diagnostic app showing the Opportunity tab with spend KPIs, a waterfall chart, and a category worklist](../images/spend-diagnostic-opportunity.png)
+
 ### Pick your app prompt
 
 Choose **one** option and paste it into your coding agent:

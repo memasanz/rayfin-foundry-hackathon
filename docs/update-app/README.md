@@ -6,6 +6,10 @@ Turn the Opportunity tab into a **Savings Opportunity Tracker**: move from findi
 
 For example, select a category with fragmented supplier spend, record a consolidation opportunity, assign an owner, and track its progress.
 
+**Example writeback:** The Savings Opportunity Tracker shows saved opportunities with status, assigned owner, estimated target savings, and edit controls. Your layout may differ.
+
+![Example Savings Opportunity Tracker showing saved opportunities, statuses, assigned owners, estimated target savings, and controls to create or edit records](../images/savings-opportunity-tracker.png)
+
 ## What you will add
 
 A saved opportunity has a category, business unit, title, owner, status, target savings amount, and notes. Users can read and edit only opportunities they created. The creator is recorded from their signed-in identity and cannot be changed; the editable owner field does not grant access.

@@ -44,6 +44,10 @@ Leave the app unchanged.
 
 Go to [ai.azure.com](https://ai.azure.com) and sign in with your hackathon account. Open your Foundry project, find the Spend Copilot agent you just created, and open its **Try it** chat.
 
+**Example:** Select **Build -> Agents**, open your agent, and use its **Playground** chat to test questions.
+
+![Spend Copilot in the Foundry Playground, with Build and Agents highlighted, the Fabric IQ tool configured, and an example answer](../images/spend-copilot-foundry-playground.png)
+
 Ask:
 
 ```text
@@ -64,6 +68,10 @@ Keep the reported agent name and Foundry project endpoint for the next step.
 ## 2. Connect the agent to your Fabric app
 
 Add a Spend Copilot chat panel alongside the app's existing dashboards.
+
+**Example integration:** The Spend Copilot panel includes Foundry account controls, a business-unit selector, starter questions, and answers alongside the dashboard. Your layout may differ.
+
+![Example Spend Copilot panel in the Fabric app showing account controls, business-unit selection, starter questions, and a chat answer](../images/spend-copilot-app.png)
 
 **How it connects:** App -> authenticated Rayfin Function -> Foundry agent -> Fabric IQ -> your semantic model.
 
