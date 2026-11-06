@@ -19,7 +19,7 @@ Choose **one** option, replace the placeholders, and paste it into your coding a
 | [Detailed instructions](#option-1-detailed-instructions) | Specify the tables, relationships, measures, and roles for a consistent lab result. |
 | [Let the agent decide](#option-2-let-the-agent-decide) | Describe the goal and let the agent choose the model design from the workbook. Results may differ. |
 
-Both options load the workbook into a schema-enabled lakehouse, use your alias, and deploy and validate a Direct Lake model. Do not run both.
+Both options use the same workbook and inputs. Do not run both.
 
 ## Option 1: Detailed instructions
 
@@ -104,18 +104,12 @@ Explore the Northwind spend Excel spreadsheet in this repository and load
 it into Fabric. I am going to build an app that lets me interact with this
 data, and an agent later.
 
-Use a schema-enabled lakehouse and create a Direct Lake semantic model.
-Include my alias in the names of the items you create. Use your judgment
-to prepare and validate the data for those experiences.
-
 Inputs:
 - Workbook: data/Northwind_Spend_Extract_FY2026.xlsx
 - Alias: <ALIAS>
 - Tenant ID: <TENANT_ID>
 - Fabric workspace name: <WORKSPACE_NAME>
 
-For now, prepare the data and semantic model only; do not build the app
-or agent yet. Share the results and the workspace and model IDs.
 ```
 
 ## Check the result
