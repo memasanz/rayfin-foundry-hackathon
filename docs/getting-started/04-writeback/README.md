@@ -56,6 +56,6 @@ The opportunities are stored in the app's database, not the semantic model. The 
 
 As a possible next step **outside the scope of this hackathon**, give the agent a tool that reads the signed-in user's opportunities, or bring the opportunity data into the semantic model. Either approach must preserve the same creator-only access controls so users cannot retrieve someone else's opportunities through the agent.
 
-[Previous: Connect the agent to your Fabric app](../../foundry-agent/02-connect-app.md)
+[Previous: Connect the agent to your Fabric app](../../foundry-agent/README.md#2-connect-the-agent-to-your-fabric-app)
 
 [Back to the hackathon](../../../README.md#lets-get-started)

@@ -1,6 +1,6 @@
 # 4. Update our App
 
-Continue with the app after [connecting your Foundry agent](../foundry-agent/02-connect-app.md):
+Continue with the app after [connecting your Foundry agent](../foundry-agent/README.md#2-connect-the-agent-to-your-fabric-app):
 
 1. [Create a writeback](../getting-started/04-writeback/README.md) - Add a Savings Opportunity Tracker to create, save, and update actions from the Opportunity tab.
 
