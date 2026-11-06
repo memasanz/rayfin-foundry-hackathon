@@ -50,6 +50,12 @@ they cannot read or edit each other's records, then deploy the updated app.
 
 You have demonstrated **writeback** when a user-entered change is saved to the backend and can be read back after a refresh, not just displayed temporarily in the browser.
 
+## Note: Making the agent aware of opportunities
+
+The opportunities are stored in the app's database, not the semantic model. The Foundry agent queries the model through Fabric IQ, so it cannot see these records automatically.
+
+As a possible next step **outside the scope of this hackathon**, give the agent a tool that reads the signed-in user's opportunities, or bring the opportunity data into the semantic model. Either approach must preserve the same creator-only access controls so users cannot retrieve someone else's opportunities through the agent.
+
 [Previous: Connect the agent to your Fabric app](../../foundry-agent/02-connect-app.md)
 
 [Back to the hackathon](../../../README.md#lets-get-started)
