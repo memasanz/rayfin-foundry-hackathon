@@ -42,7 +42,7 @@ Leave the app unchanged.
 
 ### Try it
 
-Go to [Microsoft Foundry](https://ai.azure.com) and sign in with your hackathon account. Open your Foundry project, find the Spend Copilot agent you just created, and open its **Try it** chat.
+Go to [ai.azure.com](https://ai.azure.com) and sign in with your hackathon account. Open your Foundry project, find the Spend Copilot agent you just created, and open its **Try it** chat.
 
 Ask:
 
