@@ -100,9 +100,13 @@ Stop after the semantic model is ready; do not build the app yet.
 ## Option 2: Let the agent decide
 
 ```text
-Explore the Northwind spend workbook included in this repository, load it
-into a schema-enabled Fabric lakehouse with tables in the dbo schema,
-and create a Direct Lake semantic model for a procurement spend app.
+Explore the Northwind spend Excel spreadsheet in this repository and load
+it into Fabric. I am going to build an app that lets me interact with this
+data, and an agent later.
+
+Use a schema-enabled lakehouse and create a Direct Lake semantic model.
+Include my alias in the names of the items you create. Use your judgment
+to prepare and validate the data for those experiences.
 
 Inputs:
 - Workbook: data/Northwind_Spend_Extract_FY2026.xlsx
@@ -110,28 +114,8 @@ Inputs:
 - Tenant ID: <TENANT_ID>
 - Fabric workspace name: <WORKSPACE_NAME>
 
-Use my alias in every Fabric item name so my work stays separate from
-other participants:
-- Lakehouse: northwind_lh_<ALIAS>
-- Loading notebook: load_spend_workbook_<ALIAS>
-- Semantic model: Northwind Spend Model - <ALIAS>
-Ask for any missing inputs and check for existing items before creating
-them. Do not overwrite another participant's work.
-
-Read the workbook's README and explore its sheets. Use the installed Fabric
-and semantic-model-authoring skills to handle ingestion and model design,
-including appropriate data types, relationships, and business measures.
-Choose the design based on the workbook rather than asking me to specify
-every table and measure. Ensure the Direct Lake model uses the lakehouse's
-dbo schema.
-The model should support analysis of spend, suppliers, categories,
-business units, trends, and potential savings.
-
-Deploy the model and validate it against the workbook. Summarize the data,
-your modeling choices, validation results, and the workspace and model IDs
-we will need to build the app.
-
-Stop after the semantic model is ready; do not build the app yet.
+For now, prepare the data and semantic model only; do not build the app
+or agent yet. Share the results and the workspace and model IDs.
 ```
 
 ## Check the result
