@@ -37,20 +37,16 @@ Use supported MSAL sign-in with PKCE and memory-only token storage,
 including the supported popup flow when the app is embedded in Fabric.
 Ask the organizer to register the actual app-root callback if needed.
 
-Call the agent through an authenticated Rayfin Function using the generated
-typed client. Forward the connected user's Foundry token unchanged;
-do not use a backend OBO exchange or fall back to the app owner's token.
-Keep Foundry invocation and Fabric IQ queries server-side.
+Connect through an authenticated Rayfin Function using the signed-in
+user's Foundry identity. Preserve their permissions when querying Fabric IQ.
 
-Pass the current tab and business-unit selection as requested scope.
-The agent must retrieve its own evidence through Fabric IQ, not rely on
-dashboard snapshots. Display its answer, references, actual agent version,
-and request ID.
+Pass the current tab and business-unit selection to the agent as context.
+Display its answers and references in the chat panel.
 
-Show immediate feedback when a question is sent, prevent duplicate sends,
-and provide readable Markdown answers and useful error/retry states.
-Keep tokens and chat in memory, clear chat on account or scope changes,
-and ignore responses from an earlier account or scope.
+Make the chat responsive, with formatted answers, loading feedback,
+and retryable errors. Prevent duplicate sends. Keep tokens and chat
+in memory only, and reset the conversation when the account or view changes
+without showing late responses from the previous context.
 
 Test the integration, run the project's build, lint, and tests, then deploy
 to the same Fabric App item. Share the URL and what you verified.
