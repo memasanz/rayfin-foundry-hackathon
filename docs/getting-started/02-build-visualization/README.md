@@ -2,8 +2,6 @@
 
 Build a Rayfin app using the semantic model from [exercise 1](../01-semantic-model/README.md). Continue in the same chat so the agent has your alias, workspace, and model details.
 
-You do not need to run `npm install rayfin` first. The agent will scaffold the app and install its project dependencies using the Rayfin guidance.
-
 ## Pick your prompt
 
 Choose **one** option and paste it into your coding agent:
