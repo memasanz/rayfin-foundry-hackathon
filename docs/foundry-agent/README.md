@@ -42,7 +42,9 @@ Leave the app unchanged.
 
 ### Try it
 
-Ask the agent:
+Go to [Microsoft Foundry](https://ai.azure.com) and sign in with your hackathon account. Open your Foundry project, find the Spend Copilot agent you just created, and open its **Try it** chat.
+
+Ask:
 
 ```text
 What is our total spend, and which business unit has the highest spend?
