@@ -14,7 +14,7 @@ Install missing tools before the hackathon, starting with **Node.js**, which inc
 | Git | Current | Clone the hackathon repository | [Git](https://git-scm.com/install/) | `git --version` |
 | Azure CLI | Current | Entra tokens for Fabric, Power BI, OneLake, and SQL | [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) | `az version` |
 | Python | 3.10 or later | Agent tasks such as reading Excel files and calling REST APIs | [Python](https://www.python.org/downloads/) | `python --version` |
-| Azure Functions Core Tools | v4; required for starter scenarios 1b and 2 | Generate function types with `npx rayfin dev functions apply` | [Core Tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) | `func --version` |
+| Azure Functions Core Tools | v4; required for Foundry agent integration | Generate function types with `npx rayfin dev functions apply` | [Core Tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) | `func --version` |
 
 On macOS, use `python3 --version` if `python` is unavailable.
 
