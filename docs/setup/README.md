@@ -18,6 +18,8 @@ Install missing tools before the hackathon, starting with **Node.js**, which inc
 
 On macOS, use `python3 --version` if `python` is unavailable.
 
+#### Rayfin setup
+
 No separate `npm install rayfin` step is needed. With Node.js/npm installed, let your coding agent scaffold the app and install its project dependencies using the Rayfin guidance. Rayfin uses `npm create` for scaffolding and `npx rayfin` for CLI commands. Your npm must be able to reach the public npm registry.
 
 **Azure Functions Core Tools is a separate prerequisite**, not supplied by Rayfin or Foundry Dev Pack.

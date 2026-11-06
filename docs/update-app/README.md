@@ -2,9 +2,9 @@
 
 Continue with the app from [Build our App](../build-app/README.md):
 
-1. [Create a writeback](../getting-started/04-writeback/README.md)
+1. [Create a writeback](../getting-started/04-writeback/README.md) - Add a Savings Opportunity Tracker to create, save, and update actions from the Opportunity tab.
 
-This is an exercise outline. Detailed instructions will be added next.
+The tracker stores new app data while leaving the original spend model unchanged.
 
 [Previous: Build our App](../build-app/README.md) | [Next: Build a Foundry Agent](../foundry-agent/README.md)
 
