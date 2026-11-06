@@ -1,8 +1,11 @@
 # 4. Build a Foundry Agent
 
-Build an agent with Microsoft Foundry after completing the app exercises.
+Add a Spend Copilot to the Fabric app you built earlier.
 
-Detailed instructions and agent requirements will be added here. For installation, see [Foundry Tools](../setup/README.md#foundry-tools).
+1. [Create and test the Foundry agent](01-create-agent.md) - Connect an agent to your semantic model and ask it questions.
+2. [Connect the agent to your Fabric app](02-connect-app.md) - Add a chat panel to the existing app.
+
+Continue in the same chat and app project. Each step has a prompt and a short check before moving on.
 
 [Previous: Update our App](../update-app/README.md)
 
