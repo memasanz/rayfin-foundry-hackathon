@@ -16,12 +16,26 @@ Choose **one** option, replace the placeholders, and paste it into your coding a
 
 | Option | Approach |
 |---|---|
-| [Detailed instructions](#option-1-detailed-instructions) | Specify the tables, relationships, measures, and roles for a consistent lab result. |
-| [Let the agent decide](#option-2-let-the-agent-decide) | Describe the goal and let the agent choose the model design from the workbook. Results may differ. |
+| [Let the agent decide](#option-1-let-the-agent-decide) | Describe the goal and let the agent choose the model design from the workbook. Results may differ. |
+| [Detailed instructions](#option-2-detailed-instructions) | Specify the tables, relationships, measures, and roles for a consistent lab result. |
 
 Both options use the same workbook and inputs. Do not run both.
 
-## Option 1: Detailed instructions
+## Option 1: Let the agent decide
+
+```text
+Explore the Northwind spend Excel spreadsheet in this repository and load
+it into Fabric. I am going to build an app that lets me interact with this
+data, and an agent later.
+
+Inputs:
+- Workbook: data/Northwind_Spend_Extract_FY2026.xlsx
+- Alias: <ALIAS>
+- Tenant ID: <TENANT_ID>
+- Fabric workspace name: <WORKSPACE_NAME>
+```
+
+## Option 2: Detailed instructions
 
 ```text
 Create the Fabric data foundation for a Northwind procurement spend app.
@@ -95,21 +109,6 @@ identity is available, since Admin/Member accounts bypass RLS.
 Report the workspace, lakehouse, notebook, and semantic model IDs,
 validation results, and anything that could not be verified.
 Stop after the semantic model is ready; do not build the app yet.
-```
-
-## Option 2: Let the agent decide
-
-```text
-Explore the Northwind spend Excel spreadsheet in this repository and load
-it into Fabric. I am going to build an app that lets me interact with this
-data, and an agent later.
-
-Inputs:
-- Workbook: data/Northwind_Spend_Extract_FY2026.xlsx
-- Alias: <ALIAS>
-- Tenant ID: <TENANT_ID>
-- Fabric workspace name: <WORKSPACE_NAME>
-
 ```
 
 ## Check the result
