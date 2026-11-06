@@ -11,7 +11,7 @@ Open the hackathon folder in your coding agent.
 1. [Create a semantic model in Fabric](../getting-started/01-semantic-model/README.md) - Confirm inputs, load the workbook, and build and validate the model.
 2. [Build a visualization](../getting-started/02-build-visualization/README.md) - Scaffold the app, connect to the model, build its pages, and deploy.
 
-Each section has a short prompt and a **checkpoint**. Paste one prompt at a time, review the result, and continue only after the checkpoint passes. The agent must stop between sections rather than run the whole lab at once.
+Each exercise offers two prompts: a simple goal-based option and a detailed option. Choose one, review the result, then continue to the next exercise.
 
 Use the **same chat and workspace** throughout. If you start a new chat, provide this page, the exercise page, your confirmed inputs, and the item IDs reported at the last checkpoint. Do not paste tokens or credentials.
 

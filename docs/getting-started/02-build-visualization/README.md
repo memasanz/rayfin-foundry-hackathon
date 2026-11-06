@@ -1,170 +1,99 @@
 # 2. Build a visualization
 
-Build a four-page Rayfin app over the validated semantic model from [exercise 1](../01-semantic-model/README.md). This is an app visualization experience, not a separate Power BI report.
+Build a Rayfin app using the semantic model from [exercise 1](../01-semantic-model/README.md). Continue in the same chat so the agent has your alias, workspace, and model details.
 
-Keep using the same chat. You need your confirmed alias, tenant, workspace ID, and semantic model ID. Reuse the workbook and model from exercise 1.
+## Pick your prompt
 
-## 2.1 Scaffold the app
+Choose **one** option and paste it into your coding agent:
 
-Paste this prompt:
+| Option | Approach |
+|---|---|
+| [Let the agent decide](#option-1-let-the-agent-decide) | Name the four tabs and design style; let the agent choose the visuals and implementation. |
+| [Detailed instructions](#option-2-detailed-instructions) | Specify the app setup, visuals for each tab, validation, and deployment. |
+
+## Option 1: Let the agent decide
 
 ```text
-Read docs/build-app/README.md and
-docs/getting-started/02-build-visualization/README.md.
-Continue with section 2.1 only, using the confirmed inputs.
-If any input or the validated semantic model ID is missing, ask me for it.
+Build and deploy a Rayfin app using the semantic model we just created.
+Use my alias in the app name.
+
+Build a polished UI with four tabs: Executive overview, Category deep-dive,
+Supplier concentration, and Opportunity. Choose useful visuals for each
+tab based on the model and connect them to live data.
+
+Design: white surfaces, navy headers #0E1E3D, one accent #0078D4,
+$M and % to one decimal, loading, empty and error states on every visual
+(errors show category, message and request ID), readable at 1366 px.
+```
+
+## Option 2: Detailed instructions
+
+```text
+Build and deploy a Northwind procurement spend app using the Fabric
+semantic model we created in the previous task. Use my existing alias,
+tenant, workspace, and model IDs; ask for anything missing.
 
 Scaffold spend-diagnostic-<ALIAS> from the Rayfin dataapp template in
-my confirmed workspace, using my alias. Scaffold before any further data
-profiling or app implementation. Do not replace an existing app or folder
-without asking me.
-
-Immediately read the scaffolded AGENTS.md and relevant .agents/skills/.
-Follow that guidance for setup, CLI commands, and generated files.
-Ask me to complete interactive Rayfin sign-in when required; do not
-assume Azure CLI sign-in also signs me into Rayfin.
-
-Report the app folder, template, workspace, and relevant generated guidance.
-Do not add a connector or build pages yet. Stop for my review.
-```
-
-**Checkpoint:** The alias-named app is scaffolded in its own folder, and the agent has read its generated guidance. Continue app commands from that app folder, not the documentation folder.
-
-## 2.2 Connect to the semantic model
-
-Paste this next:
-
-```text
-Continue with section 2.2 only. Follow the generated app guidance.
+my workspace. Scaffold first, then read the generated AGENTS.md and
+relevant .agents/skills/. Follow them for version-specific setup,
+dependencies, connector registration, query validation, app code,
+and deployment. Use my alias so the app does not collide with others.
 
 Register a fabric-semanticmodel connector named spendmodel for the
-validated semantic model created in exercise 1.
-Use the confirmed workspace and model IDs, not guessed identifiers.
-Use the template's registration workflow; do not hand-edit generated wiring.
+existing model. Prove live connectivity, discover its schema, and read
+measure descriptions before writing queries. Map the requirements below
+to the actual model. If a necessary measure is missing, use the
+semantic-model-authoring skill to add and validate it in my model.
+Validate every final app query with the template-prescribed tools.
 
-Prove live connectivity using its prescribed connector query tools.
-Discover tables, columns, measures, and measure descriptions.
-Map the metrics and fields used in this guide to the actual model.
-If a needed measure is missing, use semantic-model-authoring to add and
-validate it in my model before continuing.
-Validate queries for the four planned pages before writing UI code.
-Include a total-spend query and business-unit/category slices, comparing
-them with the validated model results from exercise 1.
+Build four tabs, all using live model queries with no mock or
+hard-coded business numbers:
 
-Report connector name, model ID, query results, and any access problems.
-Do not build pages yet. Stop for my review.
-```
+1. Executive overview:
+   - KPI cards for Total Spend, Addressable Spend, Addressable %,
+     and Savings Opportunity Mid.
+   - Spend by business unit.
+   - Spend by month using calendar[year_month], in chronological order.
+   - A three-bullet "So what" panel computed from query results, not an LLM.
 
-**Checkpoint:** `spendmodel` returns live data from the correct model, its schema and descriptions are available, and the queries reconcile. If Read/Build permissions or the Execute Queries tenant setting are missing, resolve that with the organizer before continuing.
+2. Category deep-dive:
+   - Top 15 category_l2 values by spend, colored by category_l1.
+   - Business unit by category_l1 heatmap.
+   - Savings range by category_l1.
 
-## 2.3 Build the executive overview
+3. Supplier concentration:
+   - Pareto chart of the top 50 suppliers.
+   - Spend by supplier tier.
+   - Top-25 supplier grid.
+   Identify suppliers by supplier_id, since names can repeat.
 
-Use the same design throughout the app:
+4. Opportunity:
+   - Waterfall from Addressable Spend to Mid savings by primary_lever.
+   - Category table flagging fragmentation where more than 40 suppliers
+     have spend in the category.
 
-| Area | Requirement |
-|---|---|
-| Colors | White surfaces, navy headers `#0E1E3D`, accent `#0078D4` |
-| Numbers | Dollar millions and percentages to one decimal |
-| Layout | Readable at 1366 px |
-| Visual states | Loading, empty, and error states on every visual |
-| Savings labels | Clearly identify savings as **illustrative benchmarks** |
-| Data | Live connector queries only; no mock or hard-coded business values |
-
-Paste this next:
-
-```text
-Continue with section 2.3 only. Follow the generated app guidance
-and design requirements in this guide.
-
-Build the Executive overview page using spendmodel:
-- KPI cards for Total Spend, Addressable Spend, Addressable %, and
-  Savings Opportunity Mid, using the model's measure definitions.
-- Spend by business unit.
-- Spend by month using calendar[year_month], in chronological order.
-- A three-bullet "So what" panel calculated deterministically from the
-  live query results, not generated by an LLM.
-
-Validate every final query through the prescribed connector tools.
-Run the relevant existing build, lint, and tests required by the template.
-Report what passed and what is not yet verified in a deployed browser.
-Do not build the remaining pages or deploy yet. Stop for my review.
-```
-
-**Checkpoint:** The first page is implemented, queries reconcile, and required local checks pass. This does not yet prove the deployed page renders or signs in successfully. Connector-backed visuals may not work under a plain local `npm run dev`; do not replace them with mock data.
-
-## 2.4 Add the remaining pages
-
-| Page | Required visuals |
-|---|---|
-| Category deep-dive | Top 15 `category_l2` values by spend, colored by `category_l1`; business unit by `category_l1` heatmap; savings range by `category_l1` |
-| Supplier concentration | Pareto chart for the top 50 suppliers; spend by supplier tier; top-25 supplier grid |
-| Opportunity | Waterfall from Addressable Spend to Mid savings by `primary_lever`; category table flagging more than 40 suppliers |
-
-Paste this next:
-
-```text
-Continue with section 2.4 only. Follow the generated app guidance.
-Preserve the existing Executive overview.
-
-Add the three pages defined in this guide: Category deep-dive,
-Supplier concentration, and Opportunity. Reuse the established design
-and spendmodel connector. Read the model metadata and descriptions
-before composing queries, and validate every final query with the
-template-prescribed tools.
-
-Use supplier_id for supplier identity, since names can repeat.
-Compute category fragmentation from suppliers with spend in that category.
+Design: white surfaces, navy headers #0E1E3D, one accent #0078D4,
+$M and % to one decimal, loading, empty and error states on every visual
+(errors show category, message and request ID), readable at 1366 px.
 Label every savings figure as an illustrative benchmark.
 
-Run the template-prescribed build, lint, and tests.
-Report page-by-page results and failures. Do not deploy, add writeback,
-or create a Foundry agent. Stop for my review.
+Keep staticHosting.assetAccess: protected and the template's Fabric
+sign-in flow. Keep credentials and local environment/deployment files
+out of Git. Ask me to complete interactive Rayfin sign-in when needed.
+Do not use npx rayfin up --force without asking me.
+
+Run the template-prescribed build, lint, and tests, then deploy with
+npx rayfin up and capture the actual hostingUrl from deployment status.
+Verify that key totals and slices match the workbook-derived results
+from the previous task through both model DAX and connector queries.
+
+Report the App item ID, hostingUrl, what you verified with the numbers,
+and anything you could not verify.
 ```
 
-**Checkpoint:** All four pages are implemented, their final queries are validated, and required local checks pass. The original workbook flags **Fasteners & C-Parts: 62 suppliers, approximately $56.6M**; confirm that against the workbook rather than hard-coding it.
+## Check the result
 
-## 2.5 Deploy and verify in the browser
-
-Paste this next:
-
-```text
-Continue with section 2.5 only. Follow the generated app deployment guidance.
-
-Confirm all required checks passed, then deploy this alias-named app with
-the template-prescribed workflow. Do not use forced deployment.
-Keep staticHosting.assetAccess: protected and the Fabric sign-in flow.
-Check deployment status and report the actual hostingUrl; do not invent it.
-
-Recheck key totals through both model DAX and the app connector against
-the workbook-derived results. If browser tooling is available, check
-the deployed app after I complete any interactive sign-in.
-Otherwise give me a manual checklist and mark browser checks unverified.
-
-Report the App item ID, hostingUrl, validation results, and limitations.
-Do not start visualization changes, writeback, or Foundry work.
-Stop for my review.
-```
-
-Open the reported **hostingUrl** and complete Fabric sign-in yourself. Check:
-
-- All four pages load with live data and readable labels at 1366 px.
-- Total Spend agrees with the validated model (about **$1,531.4M** for the source workbook).
-- Business-unit and month charts match the model results; savings are labeled illustrative.
-- Navigation works, with no silent failures or replacement mock values.
-- Loading, empty, and error handling are implemented; distinguish observed behavior from states that have not been exercised.
-
-**Checkpoint:** Deployment status confirms success, the actual URL is recorded, and you have checked the signed-in app in a browser. Keep this same app and model for the next exercises.
-
-## If a checkpoint fails
-
-| Symptom | Next action |
-|---|---|
-| CLI returns 401 or 403 | Follow generated guidance to check Rayfin sign-in and workspace/model permissions |
-| Connector reports an API error | Check model Read/Build access and the Execute Queries tenant setting with the organizer |
-| Connector reports a query error | Rediscover table, column, and measure names; revalidate the query |
-| Connector is missing from generated client types | Use the template's connector registration/type-generation workflow for `spendmodel` |
-| Local visuals are empty | Validate using connector tools, then check the deployed app; local dev alone may not run connectors |
-| Model savings differ from workbook calculations | Return to exercise 1 and check category-specific rates, percentage units, and relationships |
+Open the app URL and sign in. Check that all four tabs load live data, the numbers agree with your model, and the design is readable at 1366 px. Keep this app for the next exercise.
 
 [Previous: Create a semantic model in Fabric](../01-semantic-model/README.md) | [Next: Change the visualization](../03-change-visualization/README.md)
 

@@ -15,10 +15,8 @@ Install missing tools before the hackathon, starting with **Node.js**, which inc
 | Azure CLI | Current | Entra tokens for Fabric, Power BI, OneLake, and SQL | [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) | `az version` |
 | Python | 3.10 or later | Agent tasks such as reading Excel files and calling REST APIs | [Python](https://www.python.org/downloads/) | `python --version` |
 | Azure Functions Core Tools | v4; required for starter scenarios 1b and 2 | Generate function types with `npx rayfin dev functions apply` | [Core Tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools) | `func --version` |
-| go-sqlcmd | Optional; current Go variant | Validate queries against the lakehouse SQL analytics endpoint | [sqlcmd](https://learn.microsoft.com/sql/tools/sqlcmd/sqlcmd-download-install) | `sqlcmd --version` |
-| Playwright with Chromium | Optional; project-local | Browser checks of the deployed app | [Playwright](https://playwright.dev/docs/intro) and [browsers](https://playwright.dev/docs/browsers#install-browsers) | `npx playwright --version` |
 
-On macOS, use `python3 --version` if `python` is unavailable. For Playwright, follow the scaffolded project's dependencies and browser-installation instructions rather than initializing another project; its version check does not confirm Chromium is installed.
+On macOS, use `python3 --version` if `python` is unavailable.
 
 Rayfin is fetched through `npx` and `npm create`; no global Rayfin installation is needed. Your npm must be able to reach the public npm registry. **Azure Functions Core Tools is a separate prerequisite**, not supplied by Rayfin or Foundry Dev Pack.
 
