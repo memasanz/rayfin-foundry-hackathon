@@ -10,8 +10,9 @@ Open the hackathon folder in your coding agent.
 
 1. [Create a semantic model in Fabric](../getting-started/01-semantic-model/README.md) - Confirm inputs, load the workbook, and build and validate the model.
 2. [Build a visualization](../getting-started/02-build-visualization/README.md) - Scaffold the app, connect to the model, build its pages, and deploy.
+3. [Change the visualization](../getting-started/03-change-visualization/README.md) - Update a chart in the app and deploy the change.
 
-Each exercise offers two prompts: a simple goal-based option and a detailed option. Choose one, review the result, then continue to the next exercise.
+The first two exercises offer a simple goal-based prompt and a detailed prompt; choose one. Then use the visualization-change prompt to refine your app. Review each result before continuing.
 
 Use the **same chat and workspace** throughout. If you start a new chat, provide this page, the exercise page, your confirmed inputs, and the item IDs reported at the last checkpoint. Do not paste tokens or credentials.
 
