@@ -2,7 +2,7 @@
 
 Build a four-page Rayfin app over the validated semantic model from [exercise 1](../01-semantic-model/README.md). This is an app visualization experience, not a separate Power BI report.
 
-Keep using the same chat and the [lab guardrails](../../build-app/README.md#lab-guardrails). You need your confirmed alias, tenant, workspace ID, and semantic model ID. Do not reload the workbook or create another model.
+Keep using the same chat. You need your confirmed alias, tenant, workspace ID, and semantic model ID. Reuse the workbook and model from exercise 1.
 
 ## 2.1 Scaffold the app
 
@@ -11,7 +11,7 @@ Paste this prompt:
 ```text
 Read docs/build-app/README.md and
 docs/getting-started/02-build-visualization/README.md.
-Continue with section 2.1 only, using the confirmed inputs and lab guardrails.
+Continue with section 2.1 only, using the confirmed inputs.
 If any input or the validated semantic model ID is missing, ask me for it.
 
 Scaffold spend-diagnostic-<ALIAS> from the Rayfin dataapp template in
@@ -35,8 +35,7 @@ Do not add a connector or build pages yet. Stop for my review.
 Paste this next:
 
 ```text
-Continue with section 2.2 only. Follow the lab guardrails and generated
-app guidance.
+Continue with section 2.2 only. Follow the generated app guidance.
 
 Register a fabric-semanticmodel connector named spendmodel for the
 existing, validated Northwind Spend Model belonging to my alias.
@@ -71,8 +70,8 @@ Use the same design throughout the app:
 Paste this next:
 
 ```text
-Continue with section 2.3 only. Follow the lab guardrails, generated app
-guidance, and design requirements in this guide.
+Continue with section 2.3 only. Follow the generated app guidance
+and design requirements in this guide.
 
 Build the Executive overview page using spendmodel:
 - KPI cards for Total Spend, Addressable Spend, Addressable %, and
@@ -101,8 +100,8 @@ Do not build the remaining pages or deploy yet. Stop for my review.
 Paste this next:
 
 ```text
-Continue with section 2.4 only. Follow the lab guardrails and generated
-app guidance. Preserve the existing Executive overview.
+Continue with section 2.4 only. Follow the generated app guidance.
+Preserve the existing Executive overview.
 
 Add the three pages defined in this guide: Category deep-dive,
 Supplier concentration, and Opportunity. Reuse the established design
@@ -126,8 +125,7 @@ or create a Foundry agent. Stop for my review.
 Paste this next:
 
 ```text
-Continue with section 2.5 only. Follow the lab guardrails and generated
-app deployment guidance.
+Continue with section 2.5 only. Follow the generated app deployment guidance.
 
 Confirm all required checks passed, then deploy this alias-named app with
 the template-prescribed workflow. Do not use forced deployment.

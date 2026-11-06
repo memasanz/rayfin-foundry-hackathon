@@ -1,10 +1,10 @@
 # 1. Create a semantic model in Fabric
 
-Create and validate the data foundation before building the app. Follow the [lab overview and guardrails](../../build-app/README.md) first.
+Create and validate the data foundation before building the app. Start with the [lab overview](../../build-app/README.md).
 
 ## 1.1 Confirm your inputs and sign in
 
-Download the workbook and collect the inputs listed in the overview. Open a terminal in the repository root and sign in yourself:
+Use the workbook included in this repository at `data/Northwind_Spend_Extract_FY2026.xlsx` and collect the inputs listed in the overview. Open a terminal in the repository root and sign in yourself:
 
 ```text
 az login --tenant <TENANT_ID>
@@ -15,7 +15,7 @@ Replace `<TENANT_ID>` with the organizer's tenant ID. This is interactive; do no
 Replace the placeholders in this prompt, then paste it into your coding agent:
 
 ```text
-Read docs/build-app/README.md, including the lab guardrails, and
+Read docs/build-app/README.md and
 docs/getting-started/01-semantic-model/README.md.
 Work only on section 1.1, not the whole lab.
 
@@ -25,11 +25,10 @@ My inputs:
 - Tenant ID: <TENANT_ID>
 - Fabric workspace name: <WORKSPACE_NAME>
 
-Check for missing inputs and validate that the alias is lowercase letters
-and numbers. Check that the workbook exists, then ask me to confirm its path
-before reading it or creating resources.
+Check that the inputs are complete, the alias uses lowercase letters and
+numbers, and the workbook exists. Ask me for anything missing.
 
-After confirmation, use the installed Fabric skills to verify my signed-in
+Use the installed Fabric skills to verify my signed-in
 tenant, workspace access, and active capacity. Discover the workspace ID
 and list any existing items matching my alias. Do not change permissions
 or tenant settings, and do not print access tokens.
@@ -55,7 +54,7 @@ The workbook contains five data sheets and a `README` sheet with definitions and
 Paste this next:
 
 ```text
-Continue with section 1.2 only, using my confirmed inputs and lab guardrails.
+Continue with section 1.2 only, using my confirmed inputs.
 
 Read the workbook's README sheet, then inspect the five data sheets.
 Calculate source row counts and total invoice_amount_usd from the workbook.
@@ -129,7 +128,7 @@ Add three RLS roles with read permission:
 Paste this next:
 
 ```text
-Continue with section 1.3 only, using the validated lakehouse and lab guardrails.
+Continue with section 1.3 only, using the validated lakehouse.
 Read the installed semantic-model-authoring skill before model work.
 
 Author Northwind Spend Model - <ALIAS> as TMDL, replacing <ALIAS> with
@@ -152,7 +151,7 @@ and role definitions. Do not scaffold an app. Stop for my review.
 Paste this next:
 
 ```text
-Continue with section 1.4 only. Follow the lab guardrails.
+Continue with section 1.4 only.
 
 Use the installed semantic-model guidance to validate all 15 measures with
 DAX through the Power BI executeQueries API. Independently calculate their
