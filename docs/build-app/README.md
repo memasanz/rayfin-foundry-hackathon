@@ -42,6 +42,6 @@ Your alias keeps your work separate from other participants in the shared worksp
 
 Use your own items and check before replacing existing work. Let the agent use the installed Fabric skills and the app's generated guidance for implementation details.
 
-[Previous: Setup Tooling](../setup/README.md) | [Next: Update our App](../update-app/README.md)
+[Previous: Setup Tooling](../setup/README.md) | [Next: Build a Foundry Agent](../foundry-agent/README.md)
 
 [Back to the hackathon](../../README.md)

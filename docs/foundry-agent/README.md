@@ -1,4 +1,4 @@
-# 4. Build a Foundry Agent
+# 3. Build a Foundry Agent
 
 Add a Spend Copilot to the Fabric app you built earlier.
 
@@ -7,6 +7,6 @@ Add a Spend Copilot to the Fabric app you built earlier.
 
 Continue in the same chat and app project. Each step has a prompt and a short check before moving on.
 
-[Previous: Update our App](../update-app/README.md)
+[Previous: Build our App](../build-app/README.md) | [Next: Update our App](../update-app/README.md)
 
 [Back to the hackathon](../../README.md)

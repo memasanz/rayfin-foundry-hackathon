@@ -4,5 +4,5 @@
 
 1. **[Setup Tooling](docs/setup/README.md)** - Prepare your local, Fabric, and Foundry tools.
 2. **[Build our App](docs/build-app/README.md)** - Create a semantic model in Fabric, build the app, and refine a visualization.
-3. **[Update our App](docs/update-app/README.md)** - Add writeback to the app.
-4. **[Build a Foundry Agent](docs/foundry-agent/README.md)** - Create and test an agent, then connect it to your Fabric app.
+3. **[Build a Foundry Agent](docs/foundry-agent/README.md)** - Create and test an agent, then connect it to your Fabric app.
+4. **[Update our App](docs/update-app/README.md)** - Add writeback to the app.

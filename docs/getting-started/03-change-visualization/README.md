@@ -17,6 +17,6 @@ visuals unchanged. Deploy the updated app so I can review the change.
 
 Open the updated app and confirm that the chart is sorted correctly, its values agree with the model, and the other visuals are unchanged.
 
-[Previous: Build a visualization](../02-build-visualization/README.md) | [Next: Create a writeback](../04-writeback/README.md)
+[Previous: Build a visualization](../02-build-visualization/README.md) | [Next: Build a Foundry Agent](../../foundry-agent/README.md)
 
 [Back to the hackathon](../../../README.md#lets-get-started)

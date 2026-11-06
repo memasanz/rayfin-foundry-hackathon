@@ -67,4 +67,6 @@ Also try canceling sign-in and retrying. Record any checks you could not complet
 
 [Previous: Create and test the Foundry agent](01-create-agent.md)
 
+[Next: Create a writeback](../getting-started/04-writeback/README.md)
+
 [Back to Build a Foundry Agent](README.md)
