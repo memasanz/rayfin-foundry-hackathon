@@ -1,5 +1,11 @@
 # Welcome to the Rayfin & Foundry Hackathon
 
+## Tooling Setup
+
+1. [Local](#local-tools)
+2. [Fabric](#fabric-tools)
+3. [Foundry](#foundry-tools)
+
 ## Local Tools
 
 Install missing tools before the hackathon, starting with **Node.js**, which includes npm. Follow the official instructions for your operating system and obtain any required IT approvals on managed devices. Skip tools that are already installed and meet the requirements. Restart your terminal (and VS Code if you use it) after installation so PATH changes take effect.
@@ -17,8 +23,6 @@ Install missing tools before the hackathon, starting with **Node.js**, which inc
 On macOS, use `python3 --version` if `python` is unavailable. For Playwright, follow the scaffolded project's dependencies and browser-installation instructions rather than initializing another project; its version check does not confirm Chromium is installed.
 
 Rayfin is fetched through `npx` and `npm create`; no global Rayfin installation is needed. Your npm must be able to reach the public npm registry. **Azure Functions Core Tools is a separate prerequisite**, not supplied by Rayfin or Foundry Dev Pack.
-
-Source and scenario details: [Rayfin hackathon starter dependencies](https://github.com/jennyney5/rayfin-hackathon-starter/blob/main/DEPENDENCIES.md#1-local-tools). Its automatic checker is available in that starter repository, not in this repository. Local tool checks do not verify cloud access, authentication, or tenant configuration.
 
 ## Fabric Tools
 
