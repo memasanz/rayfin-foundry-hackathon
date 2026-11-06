@@ -11,9 +11,13 @@ Reuse your alias, tenant, Fabric workspace, and semantic model from the app exer
 Replace the placeholders and paste this into your coding agent:
 
 ```text
-Create a Spend Copilot in Microsoft Foundry that answers questions about
-our Northwind data using the existing semantic model through Fabric IQ.
-It should be read-only and use my alias in the agent name.
+Create a read-only Spend Copilot in Microsoft Foundry using our existing
+Northwind semantic model, with Fabric IQ as its only external tool.
+Use the installed skills and my alias for agent and connection names.
+
+Answers should use live model evidence, respect the connected user's
+permissions and requested business-unit filters, and cite the measures
+and scope used. Describe savings as illustrative benchmarks.
 
 Inputs:
 - Alias: <ALIAS>
@@ -22,7 +26,9 @@ Inputs:
 - Foundry project endpoint: <PROJECT_ENDPOINT>
 - Foundry model deployment name: <MODEL_DEPLOYMENT_NAME>
 
-Test it with a question about our spend and show me the result.
+Save the agent definition in our existing project. Test a spend question
+against the model and report the result, agent name, and version.
+Leave the app unchanged.
 ```
 
 ## Try it
