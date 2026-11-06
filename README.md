@@ -41,3 +41,14 @@ Install **Foundry Dev Pack** for Foundry command-line tools, the Microsoft Found
 | Tool | Windows | macOS |
 |---|---|---|
 | Foundry Dev Pack | [Windows setup](docs/install/foundry-devpack-windows.md) | [macOS setup](docs/install/foundry-devpack-macos.md) |
+
+## Let's get started
+
+Complete the tooling setup above, then work through these exercises in order:
+
+1. [Create a semantic model in Fabric](docs/getting-started/01-semantic-model/README.md)
+2. [Build a visualization](docs/getting-started/02-build-visualization/README.md)
+3. [Change the visualization](docs/getting-started/03-change-visualization/README.md)
+4. [Create a writeback](docs/getting-started/04-writeback/README.md)
+
+These are exercise outlines. Detailed instructions will be added next.
