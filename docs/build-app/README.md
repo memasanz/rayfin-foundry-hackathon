@@ -41,8 +41,6 @@ Your alias keeps your work separate from other participants in the shared worksp
 
 Use your own items and check before replacing existing work. Let the agent use the installed Fabric skills and the app's generated guidance for implementation details.
 
-This lab adapts [Scenario 1: Spreadsheet to App](https://github.com/jennyney5/rayfin-hackathon-starter/tree/main/scenario-1-spreadsheet-to-app) into participant-controlled steps. Visualization changes, writeback, and the Foundry agent are later exercises, not part of this initial build.
-
 [Previous: Setup Tooling](../setup/README.md) | [Next: Update our App](../update-app/README.md)
 
 [Back to the hackathon](../../README.md)
