@@ -4,11 +4,13 @@
 
 Open the hackathon folder in VS Code and sign in to GitHub Copilot. Use the **Copilot** harness in Chat for installation and verification.
 
-Choose **one of three options** to install the skills:
+Choose **one of five options** to install the skills:
 
 1. **[Marketplace through the VS Code UI](#1-add-the-fabric-marketplace)**: browse and install the plugins in VS Code.
 2. **[Marketplace through Copilot CLI](#alternative-install-through-copilot-cli)**: install the plugins with terminal commands.
-3. **[Direct installation with APM](#if-marketplace-access-is-blocked)**: bypass the Marketplace and install the skills directly from GitHub, where your organization's policy permits.
+3. **[Direct installation with npx](#alternative-install-with-npx)**: install Fabric, Power BI authoring, and Microsoft Foundry skills into the project.
+4. **[Clone the repositories](#alternative-clone-the-repositories)**: keep the complete repositories and configure skill discovery.
+5. **[Direct installation with APM](#if-marketplace-access-is-blocked)**: bypass the Marketplace and install the skills directly from GitHub, where your organization's policy permits.
 
 ## 1. Add the Fabric marketplace
 
@@ -66,7 +68,7 @@ If either plugin is missing or cannot be confirmed, return to **Install both plu
 
 ## Alternative: install through Copilot CLI
 
-Use this **instead of** the UI installation steps if you prefer the terminal. It still uses the Fabric marketplace; if marketplace access is blocked, use the APM instructions below, where permitted.
+Use this **instead of** the UI installation steps if you prefer the terminal. It still uses the Fabric marketplace; if marketplace access is blocked, use a direct installation option below, where permitted.
 
 1. In VS Code, select **Terminal > New Terminal** and make sure you are in the hackathon workspace folder. Check that Copilot CLI is installed:
 
@@ -109,6 +111,53 @@ Use this **instead of** the UI installation steps if you prefer the terminal. It
    `/exit` closes the CLI session and returns you to your terminal shell.
 
 VS Code can discover plugins installed by Copilot CLI. Start a **new VS Code Copilot chat** and follow [Verify the skills](#3-verify-the-skills) above. To use the skills in the CLI instead, start `copilot` again and run `/skills`.
+
+## Alternative: install with npx
+
+Use this **instead of** the marketplace steps. In a terminal in the **hackathon workspace folder**, with **Node.js 22.20 or later** installed, run:
+
+```bash
+npx skills add https://github.com/microsoft/skills-for-fabric --skill "*" --agent github-copilot
+npx skills add https://github.com/microsoft/azure-skills --skill microsoft-foundry --agent github-copilot
+```
+
+The first command includes **Power BI authoring**, including `semantic-model-authoring` and `powerbi-report-cli`. The second installs **Microsoft Foundry**. These are project-local skill installations, not marketplace plugin installations.
+
+Some Fabric skills reference shared files outside their individual skill folders. If those references are missing after an npx installation, use the clone or APM route instead.
+
+Start a **new Copilot chat** after installation. Skills do not configure MCP connections, install all required tools, or grant authentication and permissions; continue with the hackathon's tooling setup.
+
+## Alternative: clone the repositories
+
+Use this **instead of** the marketplace or npx steps if you want the complete supporting files. With **Git** installed, run these commands in a terminal in the **hackathon workspace folder**:
+
+```bash
+mkdir -p .skill-sources
+git clone https://github.com/microsoft/skills-for-fabric.git .skill-sources/skills-for-fabric
+git clone https://github.com/microsoft/azure-skills.git .skill-sources/azure-skills
+```
+
+In VS Code, run **Preferences: Open Workspace Settings (JSON)** from the Command Palette and merge these entries into your existing settings:
+
+```json
+{
+  "chat.agentSkillsLocations": {
+    ".skill-sources/skills-for-fabric/skills": true,
+    ".skill-sources/azure-skills/skills": true
+  }
+}
+```
+
+VS Code forwards these configured skill locations to the selected harness. This setting remains supported for compatibility, though it is deprecated in favor of native skill locations. Here it lets the skills stay in their original repository layout, preserving shared references.
+
+For **standalone Copilot CLI**, also register the directories in its own settings:
+
+```bash
+copilot skill add .skill-sources/skills-for-fabric/skills
+copilot skill add .skill-sources/azure-skills/skills
+```
+
+This includes **Fabric, Power BI authoring, and Microsoft Foundry**, plus the Azure repository's other skills. Keep both clones in place and start a **new Copilot chat**. Cloning alone does not configure MCP connections, tooling, authentication, or permissions.
 
 ## If marketplace access is blocked
 
@@ -162,6 +211,6 @@ and powerbi-report-cli skills are available in this session?
 Check the installed skill files and report anything you cannot verify.
 ```
 
-References: [VS Code agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins), [Microsoft Fabric skills](https://github.com/microsoft/skills-for-fabric), and [APM installation](https://microsoft.github.io/apm/getting-started/installation/).
+References: [VS Code agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins), [VS Code agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills), [Copilot CLI skills](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills), [skills CLI agents](https://github.com/vercel-labs/skills/blob/main/docs/agents.md), [Microsoft Fabric skills](https://github.com/microsoft/skills-for-fabric), and [APM installation](https://microsoft.github.io/apm/getting-started/installation/).
 
 [Back to the hackathon](../../README.md)
