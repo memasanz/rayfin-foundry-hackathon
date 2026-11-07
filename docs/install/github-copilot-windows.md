@@ -4,13 +4,12 @@
 
 Open the hackathon folder in VS Code and sign in to GitHub Copilot. Use the **Copilot** harness in Chat for installation and verification.
 
-Choose **one of five options** to install the skills:
+Choose **one of four options** to install the skills:
 
 1. **[Marketplace through the VS Code UI](#1-add-the-fabric-marketplace)**: browse and install the plugins in VS Code.
 2. **[Marketplace through Copilot CLI](#alternative-install-through-copilot-cli)**: install the plugins with terminal commands.
-3. **[Direct installation with npx](#alternative-install-with-npx)**: install Fabric, Power BI authoring, and Microsoft Foundry skills into the project.
-4. **[Clone the repositories](#alternative-clone-the-repositories)**: keep the complete repositories and configure skill discovery.
-5. **[Direct installation with APM](#if-marketplace-access-is-blocked)**: bypass the Marketplace and install the skills directly from GitHub, where your organization's policy permits.
+3. **[Clone the repositories](#alternative-clone-the-repositories)**: keep the complete repositories and configure skill discovery.
+4. **[Direct installation with APM](#if-marketplace-access-is-blocked)**: bypass the Marketplace and install the skills directly from GitHub, where your organization's policy permits.
 
 ## 1. Add the Fabric marketplace
 
@@ -112,24 +111,9 @@ Use this **instead of** the UI installation steps if you prefer the terminal. It
 
 VS Code can discover plugins installed by Copilot CLI. Start a **new VS Code Copilot chat** and follow [Verify the skills](#3-verify-the-skills) above. To use the skills in the CLI instead, start `copilot` again and run `/skills`.
 
-## Alternative: install with npx
-
-Use this **instead of** the marketplace steps. In a PowerShell terminal in the **hackathon workspace folder**, with **Node.js 22.20 or later** installed, run:
-
-```powershell
-npx skills add https://github.com/microsoft/skills-for-fabric --skill "*" --agent github-copilot
-npx skills add https://github.com/microsoft/azure-skills --skill microsoft-foundry --agent github-copilot
-```
-
-The first command includes **Power BI authoring**, including `semantic-model-authoring` and `powerbi-report-cli`. The second installs **Microsoft Foundry**. These are project-local skill installations, not marketplace plugin installations.
-
-Some Fabric skills reference shared files outside their individual skill folders. If those references are missing after an npx installation, use the clone or APM route instead.
-
-Start a **new Copilot chat** after installation. Skills do not configure MCP connections, install all required tools, or grant authentication and permissions; continue with the hackathon's tooling setup.
-
 ## Alternative: clone the repositories
 
-Use this **instead of** the marketplace or npx steps if you want the complete supporting files. With **Git** installed, run these commands in a PowerShell terminal in the **hackathon workspace folder**:
+Use this **instead of** the marketplace steps if you want the complete supporting files. With **Git** installed, run these commands in a PowerShell terminal in the **hackathon workspace folder**:
 
 ```powershell
 New-Item -ItemType Directory -Path .skill-sources -Force | Out-Null
@@ -209,6 +193,6 @@ and powerbi-report-cli skills are available in this session?
 Check the installed skill files and report anything you cannot verify.
 ```
 
-References: [VS Code agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins), [VS Code agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills), [Copilot CLI skills](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills), [skills CLI agents](https://github.com/vercel-labs/skills/blob/main/docs/agents.md), [Microsoft Fabric skills](https://github.com/microsoft/skills-for-fabric), and [APM installation](https://microsoft.github.io/apm/getting-started/installation/).
+References: [VS Code agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins), [VS Code agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills), [Copilot CLI skills](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills), [Microsoft Fabric skills](https://github.com/microsoft/skills-for-fabric), and [APM installation](https://microsoft.github.io/apm/getting-started/installation/).
 
 [Back to the hackathon](../../README.md)
