@@ -18,6 +18,33 @@ Install missing tools before the hackathon, starting with **Node.js**, which inc
 
 On macOS, use `python3 --version` if `python` is unavailable.
 
+#### Check your local tools with your coding agent
+
+Open the hackathon folder in your coding agent and paste:
+
+```text
+Check whether my computer has the local tools needed for this hackathon.
+Read the Local Tools and Rayfin setup sections of the Setup Tooling guide
+in this repository and use their requirements.
+
+Detect my operating system and shell. Run version and PATH checks for
+Node.js, npm, Git, Azure CLI, Python, and Azure Functions Core Tools.
+If python is unavailable, try python3 on macOS or py -3 on Windows.
+Compare the installed versions with the stated requirements.
+Also run npm ping --registry https://registry.npmjs.org/ to check npm access.
+
+Do not install or update anything, change settings, sign in, or deploy
+resources. Do not print tokens, secrets, or environment-variable values.
+Do not treat the absence of a globally installed Rayfin CLI as a failure:
+Rayfin is run through npm create and npx.
+
+Return a short table: tool, installed version, pass/fail/unknown, and
+next action. Report the actual command results, not assumed availability.
+For missing or incompatible tools, link to the installation instructions
+in this guide. Finish with whether my local prerequisites are ready.
+Keep this separate from Fabric/Foundry permissions and connectivity.
+```
+
 #### Rayfin setup
 
 No separate `npm install rayfin` step is needed. With Node.js/npm installed, let your coding agent scaffold the app and install its project dependencies using the Rayfin guidance. Rayfin uses `npm create` for scaffolding and `npx rayfin` for CLI commands. Your npm must be able to reach the public npm registry.
