@@ -45,7 +45,7 @@ Choose **one of four options** to install the skills:
 | Plugin | Purpose |
 |---|---|
 | `fabric-skills` | Fabric workflows, including lakehouses, Spark, SQL, and OneLake. |
-| `powerbi-authoring` | Power BI semantic models, reports, and PBIP authoring. |
+| `powerbi-authoring` | Plugin containing the `semantic-model-authoring` and `powerbi-report-cli` skills for semantic models, reports, and PBIP authoring. |
 
 These are agent plugins, not extensions in the Visual Studio Marketplace. Plugins may include MCP servers as well as skills; installation alone does not configure authentication or grant Fabric access.
 
@@ -55,8 +55,9 @@ These are agent plugins, not extensions in the Visual Studio Marketplace. Plugin
 2. Ask your agent:
 
 ```text
-Can you confirm that I have the fabric-skills and powerbi-authoring
-available in this session?
+Can you confirm that the fabric-skills and powerbi-authoring plugins
+are available in this session, including the semantic-model-authoring
+and powerbi-report-cli skills?
 ```
 
 The agent should check its available tools and skills and report capabilities from **both plugins**, as shown below. A general description of Fabric or Power BI is not enough to confirm availability.
@@ -141,7 +142,7 @@ copilot skill add .skill-sources/skills-for-fabric/skills
 copilot skill add .skill-sources/azure-skills/skills
 ```
 
-This includes **Fabric, Power BI authoring, and Microsoft Foundry**, plus the Azure repository's other skills. Keep both clones in place and start a **new Copilot chat**. Cloning alone does not configure MCP connections, tooling, authentication, or permissions.
+This includes **Fabric skills, `semantic-model-authoring`, `powerbi-report-cli`, and `microsoft-foundry`**, plus the Azure repository's other skills. Keep both clones in place and start a **new Copilot chat**. Cloning alone does not configure MCP connections, tooling, authentication, or permissions.
 
 ## If marketplace access is blocked
 
@@ -169,7 +170,7 @@ apm install microsoft/skills-for-fabric --target copilot --only apm
 
 APM uses GitHub as the default host for `owner/repository` references, so `microsoft/skills-for-fabric` resolves to `https://github.com/microsoft/skills-for-fabric`. No full URL is needed.
 
-**Power BI authoring only:** for a fresh setup that needs only the two skills in the `powerbi-authoring` collection, use this command **instead of** the full-bundle command above:
+**Semantic model and report skills only:** for a fresh setup that needs only `semantic-model-authoring` and `powerbi-report-cli` (the skills in the `powerbi-authoring` plugin), use this command **instead of** the full-bundle command above:
 
 ```bash
 apm install microsoft/skills-for-fabric --skill semantic-model-authoring --skill powerbi-report-cli --target copilot --only apm

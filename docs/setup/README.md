@@ -31,7 +31,9 @@ Detect my operating system and shell. Run version and PATH checks for
 Node.js, npm, Git, Azure CLI, Python, and Azure Functions Core Tools.
 If python is unavailable, try python3 on macOS or py -3 on Windows.
 Compare the installed versions with the stated requirements.
-Also run npm ping --registry https://registry.npmjs.org/ to check npm access.
+Run npm view @microsoft/create-rayfin version to check package access
+through my configured npm registry. Do not override the registry or assume
+that npm ping is supported by a corporate proxy.
 
 Do not install or update anything, change settings, sign in, or deploy
 resources. Do not print tokens, secrets, or environment-variable values.
@@ -47,7 +49,9 @@ Keep this separate from Fabric/Foundry permissions and connectivity.
 
 #### Rayfin setup
 
-No separate `npm install rayfin` step is needed. With Node.js/npm installed, let your coding agent scaffold the app and install its project dependencies using the Rayfin guidance. Rayfin uses `npm create` for scaffolding and `npx rayfin` for CLI commands. Your npm must be able to reach the public npm registry.
+No separate `npm install rayfin` step is needed. With Node.js/npm installed, let your coding agent scaffold the app and install its project dependencies using the Rayfin guidance. Rayfin uses `npm create` for scaffolding and `npx rayfin` for CLI commands. Your npm must be able to retrieve the required packages through your organization's approved registry, or the public npm registry where permitted.
+
+On managed devices, use the registry approved by your IT team. If package access is blocked, contact IT rather than bypassing policy. A successful package metadata check confirms access to that package, not that every app dependency is available.
 
 **Azure Functions Core Tools is a separate prerequisite**, not supplied by Rayfin or Foundry Dev Pack.
 

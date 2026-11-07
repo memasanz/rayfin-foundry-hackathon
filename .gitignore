@@ -2,6 +2,9 @@
 apm_modules/
 .apm-local/
 .agents/skills/
+/apm.yml
+/apm.lock.yaml
+/skills-lock.json
 
 # Local environment files
 .env
