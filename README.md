@@ -8,6 +8,8 @@ Then build a Microsoft Foundry Spend Copilot that answers questions using your F
 
 The exercises guide you from **Excel data -> Fabric semantic model -> interactive app -> AI assistant -> writeback**, with prompts and checks at each stage.
 
+![Spend diagnostic app showing the executive overview dashboard and Spend Copilot panel.](docs/images/spend-diagnostic-executive-overview.png)
+
 ## Let's get started
 
 1. **[Setup Tooling](docs/setup/README.md)** - Prepare your local, Fabric, and Foundry tools.
