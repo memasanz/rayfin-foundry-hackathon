@@ -63,7 +63,7 @@ Choose your tool and operating system:
 |---|---|---|
 | GitHub Copilot in VS Code | [Windows setup](../install/github-copilot-windows.md) | [macOS setup](../install/github-copilot-macos.md) |
 | Cursor IDE | [Windows setup](../install/cursor-windows.md) | [macOS setup](../install/cursor-macos.md) |
-| Claude Desktop chat | [Windows setup](../install/claude-desktop-windows.md) | [macOS setup](../install/claude-desktop-macos.md) |
+| Claude | [Windows setup (Claude Code)](../install/claude-desktop-windows.md) | [macOS setup (Claude Desktop chat)](../install/claude-desktop-macos.md) |
 
 ### Foundry Tools
 
