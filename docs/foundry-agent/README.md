@@ -124,6 +124,8 @@ Verify this works at the standalone hosting URL and when embedded in Fabric.
 Do not assume a Fabric parent frame is available.
 
 Identify the exact redirect URI required by the implemented flow.
+For an app-root callback, use the deployed hosting base URL with a
+trailing /. Ensure it exactly matches the registered SPA redirect URI.
 If it is not registered, ask the organizer to add it before testing
 without removing existing redirect URIs.
 
@@ -138,9 +140,6 @@ Make the chat responsive, with formatted answers, loading feedback,
 and retryable errors. Prevent duplicate sends. Keep tokens and chat
 in memory only, and reset the conversation when the account or view changes
 without showing late responses from the previous context.
-
-Keep staticHosting.assetAccess: public for normal-browser access.
-Only static assets are public; data and APIs must remain authenticated.
 
 Run the project's build, lint, and tests. Verify sign-in callbacks, agent
 answers using live model data, and existing dashboards in both hosting
