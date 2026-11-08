@@ -66,34 +66,17 @@ The agent should check its available tools and skills and report capabilities fr
 
 If either plugin is missing or cannot be confirmed, return to **Install both plugins**, check its installation, and repeat the check in a new chat. This checks session availability, not Fabric authentication or connectivity.
 
-After completing [Foundry Tools](../setup/README.md#foundry-tools), open a **new Copilot chat** and paste this prompt to check all three hackathon skills. This also works with the clone and APM installation options below:
+Open a **new Copilot chat** with the hackathon folder open and paste this prompt to check all three hackathon skills, whether installed earlier or just now. This also works with the clone and APM installation options below:
 
 ```text
-Confirm that the hackathon skills are installed and available in this
-coding-agent session:
+Check whether these skills are available in this session:
 - semantic-model-authoring
 - powerbi-report-cli
 - microsoft-foundry
 
-Check your session's available skills, not just your general knowledge.
-Where accessible, inspect each installed SKILL.md and confirm that its
-local supporting files and shared references resolve. Use the locations
-from my chosen installation method; do not assume every method uses the
-same folder. If I installed the full Fabric collection, also list the
-other Fabric skills available in this session.
-
-Return a short table: skill, installation path or plugin source,
-available in this session (yes/no/unknown), supporting files
-(pass/fail/unknown), and next action.
-Distinguish files present on disk from skills discoverable in this chat.
-Do not claim success from folder names or installation logs alone.
-Report anything you cannot verify.
-
-This is a read-only check. Do not invoke skill workflows, install or
-update anything, change settings, sign in, or deploy resources.
-Do not print tokens or secrets. Keep skill availability separate from
-MCP configuration, local development tools, authentication, permissions,
-and live Fabric/Foundry connectivity.
+Use your available skill list and report each as available, missing,
+or unable to verify. Do not assume availability from general knowledge.
+Do not install or update anything, invoke skill workflows, or change settings.
 ```
 
 ## Alternative: install through Copilot CLI
@@ -174,7 +157,7 @@ copilot skill add .skill-sources/azure-skills/skills
 
 This includes **Fabric skills, `semantic-model-authoring`, `powerbi-report-cli`, and `microsoft-foundry`**, plus the Azure repository's other skills. Keep both clones in place and start a **new Copilot chat**. Cloning alone does not configure MCP connections, tooling, authentication, or permissions.
 
-Paste the [installed-skills verification prompt](../setup/README.md#confirm-your-installed-skills) in that new chat to check discovery and supporting files.
+Paste the [installed-skills verification prompt](../setup/README.md#confirm-your-installed-skills) in that new chat to check skill availability.
 
 ## If marketplace access is blocked
 

@@ -56,7 +56,7 @@ az login --tenant <TENANT_ID>
 
 ### Pick your model prompt
 
-Choose **one** option, replace the placeholders, and paste it into your coding agent:
+Choose **one** option, fill in any inputs you already know, and paste it into your coding agent. The agent should ask for missing inputs:
 
 | Option | Approach |
 |---|---|
@@ -78,6 +78,11 @@ Inputs:
 - Alias: <ALIAS>
 - Tenant ID: <TENANT_ID>
 - Fabric workspace name: <WORKSPACE_NAME>
+
+Before exploring the workbook or creating Fabric items, ask me for my
+alias, tenant ID, and Fabric workspace name if they are not already
+provided here or in this conversation. Treat unreplaced placeholders as
+missing inputs. Ask only for missing values; do not guess them.
 ```
 
 #### Model option 2: Detailed instructions
@@ -93,7 +98,12 @@ Inputs:
 - Tenant ID: <TENANT_ID>
 - Fabric workspace name: <WORKSPACE_NAME>
 
-Ask for any missing inputs. Use my alias in every Fabric item name.
+Before exploring the workbook or creating Fabric items, ask me for my
+alias, tenant ID, and Fabric workspace name if they are not already
+provided here or in this conversation. Treat unreplaced placeholders as
+missing inputs. Ask only for missing values; do not guess them.
+
+Use my alias in every Fabric item name.
 Check for existing items before creating them, and do not overwrite
 another participant's work.
 
