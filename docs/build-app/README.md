@@ -69,8 +69,10 @@ Both options use the same workbook and inputs. Do not run both.
 
 ```text
 Explore the Northwind spend Excel spreadsheet in this repository and load
-it into Fabric. I am going to build an app that lets me interact with this
-data, and an agent later.
+it into a schema-enabled lakehouse in Fabric, then build and validate a
+Direct Lake semantic model over the loaded data. Choose the model design
+based on the workbook. I am going to build an app that lets me interact
+with this data, and an agent later.
 Use my alias in every Fabric item name.
 
 Inputs:
