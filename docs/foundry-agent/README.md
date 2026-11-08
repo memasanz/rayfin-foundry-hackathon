@@ -91,6 +91,8 @@ The organizer supplies an approved **single-tenant SPA client ID** with delegate
 
 Each user needs permission to invoke the agent and access the model. The Foundry sign-in is separate from the dashboard's Fabric sign-in. No client secret is needed.
 
+For the MSAL implementation, follow the official [popup-relay configuration](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md#popup-relay-for-cross-origin-iframes), [redirect-bridge guidance](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/redirect-bridge.md), and [memory-cache restrictions](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/caching.md#cache-storage).
+
 The functions workflow requires **Azure Functions Core Tools v4** on the development machine. Install it if missing using the [official instructions](https://learn.microsoft.com/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools).
 
 ### App integration prompt
@@ -116,18 +118,42 @@ Keep the app's existing design and dashboards.
 
 Add Connect to Foundry, Change account, and Disconnect controls using
 the organizer's SPA registration. Show the connected Foundry account.
-Use supported MSAL sign-in with PKCE and memory-only token storage,
-including the supported popup flow when the app is embedded in Fabric.
-Keep Foundry sign-in separate from Fabric sign-in. Handle the authentication
-callback end to end, completing sign-in and returning control to the app.
-Verify this works at the standalone hosting URL and when embedded in Fabric.
+Keep Foundry sign-in separate from the dashboard's Sign in with Fabric card.
+Use @azure/msal-browser 5.28.0 or a newer compatible version with
+BrowserCacheLocation.MemoryStorage. Tokens stay in memory only.
+Use acquireTokenPopup with authorization code flow and PKCE;
+do not use loginRedirect or acquireTokenRedirect with memory storage.
+Set allowPlatformBroker: false and allowRedirectInIframe: false.
+
+Set redirectUri to the actual deployed hosting root with a trailing /,
+exactly matching the organizer SPA's registered redirect URI.
+If it is not registered, ask the organizer to add it before testing,
+without removing existing redirect URIs. Do not register the Fabric portal
+URL, guess a future hosting URL, or assume localhost is registered.
+
+For embedded sign-in, set popupRelayUri to the same hosting origin at
+/foundry-popup.html. Bundle a small static page with a Continue button.
+Its click calls runPopupRelay({ allowedAuthorityOrigins:
+["https://login.microsoftonline.com"] }) from
+@azure/msal-browser/popup-relay. Keep the dashboard out of this page;
+it is a relay, not an OAuth callback, so do not register another redirect
+URI for it. Keep direct acquireTokenPopup for standalone visits.
 Do not assume a Fabric parent frame is available.
 
-Identify the exact redirect URI required by the implemented flow.
-For an app-root callback, use the deployed hosting base URL with a
-trailing /. Ensure it exactly matches the registered SPA redirect URI.
-If it is not registered, ask the organizer to add it before testing
-without removing existing redirect URIs.
+Before the app boots, detect OAuth responses in the query or fragment:
+ear_jwe, or state together with code or error. On an auth-response visit,
+call broadcastResponseToMainFrame() from
+@azure/msal-browser/redirect-bridge and stop normal app bootstrap.
+Do not start Fabric sign-in, routing, handleRedirectPromise, or React
+on that visit. Otherwise, boot the dashboard as usual.
+Bundle the bridge on the app's own origin. Follow the SDK's callback
+hosting requirements, including no COOP headers and Cache-Control: no-store.
+
+Keep Connect disabled while sign-in or cancellation cleanup is active.
+Enable Continue only when the relay handlers are ready. Provide progress,
+Cancel sign-in, and explicit retry controls; ignore late credentials from
+canceled or superseded attempts. If silent token refresh requires interaction,
+ask the user to click Connect again rather than opening a popup automatically.
 
 Connect through an authenticated Rayfin Function using the signed-in
 user's Foundry identity. Preserve their permissions when querying Fabric IQ.
@@ -152,14 +178,14 @@ what you verified, and any remaining limitations.
 
 Open the deployed app at its **standalone hosting URL** and **inside Fabric**. In each context:
 
-1. Connect to Foundry, confirm the sign-in callback completes, and confirm the selected account.
+1. Connect to Foundry, use Continue in the relay window when embedded, allow pop-ups, and confirm the callback completes and the selected account is shown.
 2. Ask "What is our total spend?" and compare with the model for that user.
 3. Select Aerospace Components and ask "Explain this view".
 4. Confirm the answer uses that scope and includes model-derived evidence.
 5. Disconnect or change accounts and confirm the previous chat clears.
 6. Confirm all four dashboard tabs still work.
 
-Also try canceling sign-in and retrying. Record any checks you could not complete. An Admin or Member test does not prove Viewer-level RLS isolation.
+Also try canceling sign-in and retrying, and confirm the callback visit does not start the dashboard or Fabric sign-in. Test on the deployed hosting URL rather than assuming a localhost redirect is registered. Record any checks you could not complete. An Admin or Member test does not prove Viewer-level RLS isolation.
 
 [Previous: Build our App](../build-app/README.md) | [Next: Update our App](../update-app/README.md)
 
