@@ -14,6 +14,12 @@ These instructions apply to every Rayfin app built in this repository, including
 - Implement through APIs, CLIs, and files rather than asking the user to perform routine development steps. Ask for human action when interactive sign-in, tenant settings, or explicit approval is required.
 - Reuse confirmed inputs from the conversation. Ask only for missing values required by the exercise, and treat unreplaced placeholders as missing. Never invent IDs, endpoints, or credentials.
 
+## Speed and validation
+
+- Run template-required tests. Add tests only when required by the exercise or needed to verify a functional fix.
+- Batch related validations and run independent checks in parallel. Validate once per phase; rerun only checks affected by changes or failures.
+- Avoid repeated cosmetic polishing. Check readability at 1366 px once at the end, not per visual. Fix only issues that block required functionality or readability; report minor visual imperfections.
+
 ## App access and live data
 
 - Support both the app's standalone hosting URL in a normal browser tab and its embedded view in the Fabric portal. 
@@ -33,7 +39,7 @@ These instructions apply to every Rayfin app built in this repository, including
 
 ## Semantic models and validation
 
-- Preserve fixed-decimal precision for monetary totals. Avoid premature rounding in calculations; round for display. Use `DIVIDE` for DAX ratios and explicitly typed non-integer division in SQL and Spark.
+- Preserve fixed-decimal precision for monetary totals. Avoid premature rounding; round for display. Use `DIVIDE` for DAX ratios, converting fixed-decimal operands to `DOUBLE` within ratio or percentage calculations. Do not change the underlying monetary columns or total measures to `DOUBLE`. In SQL and Spark, use explicitly typed non-integer division.
 - Return `BLANK` when a meaningful result cannot be computed. Preserve genuine zeros; do not force missing or undefined results to zero.
 - Batch related live validations against documented control totals and independent source-workbook calculations, not remembered values.
 - During reconciliation, accept `BLANK` as zero only for verified no-activity aggregates, not missing data, undefined ratios, or failures.
