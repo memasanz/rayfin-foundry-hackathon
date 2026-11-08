@@ -40,6 +40,10 @@ Enter each command in Claude Code and wait for it to finish:
 /plugin install azure@claude-plugins-official
 ```
 
+Wait for confirmation that each plugin is installed and active, as shown for `powerbi-authoring` below. Use the commands above; the screenshot's input line contains duplicated text.
+
+![Claude Code confirming that the powerbi-authoring plugin is installed and active.](../images/claude-code-install-powerbi-authoring.png)
+
 | Plugin | Purpose |
 |---|---|
 | `fabric-skills` | Fabric workflows, including lakehouses, Spark, SQL, and OneLake |
@@ -55,12 +59,12 @@ Start a **new Claude Code session** in the hackathon folder after installation. 
 Paste:
 
 ```text
-Check whether these skills are available in this session:
+Check whether these skills or plugins are available in this session:
 - semantic-model-authoring
-- powerbi-report-cli
+- powerbi-authoring
 - microsoft-foundry
 
-Use your available skill list and report each as available, missing,
+Use your available skill and plugin lists and report each as available, missing,
 or unable to verify. Do not assume availability from general knowledge.
 Do not install or update anything, invoke skill workflows, or change settings.
 ```
