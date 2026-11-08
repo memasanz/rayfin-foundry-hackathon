@@ -15,6 +15,9 @@ apm_modules/
 !.env.example
 !.env.sample
 
+# Local app
+/spend-diagnostic-jennyney/
+
 # Logs
 *.log
 
