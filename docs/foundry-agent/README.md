@@ -124,7 +124,8 @@ Verify this works at the standalone hosting URL and when embedded in Fabric.
 Do not assume a Fabric parent frame is available.
 
 Identify the exact redirect URI required by the implemented flow.
-If it is not registered, ask the organizer to register it before testing.
+If it is not registered, ask the organizer to add it before testing
+without removing existing redirect URIs.
 
 Connect through an authenticated Rayfin Function using the signed-in
 user's Foundry identity. Preserve their permissions when querying Fabric IQ.
