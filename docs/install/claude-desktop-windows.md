@@ -1,12 +1,23 @@
 # Claude Code - Windows
 
-Use **Claude Code in a terminal** for these installation steps, not ordinary Claude Desktop chat or its Settings > Customize > Plugins screen.
+Use the **terminal in Claude Desktop's Code tab** for these installation steps, not ordinary Claude Desktop chat or its Settings > Customize > Plugins screen.
+
+## Before you start
+
+Open Claude Desktop and sign in. Switch to the **Code** tab and open its **Terminal** pane. Clone the hackathon repository there, then start Claude Code from the repository root and keep that folder as your workspace for installation and verification.
 
 ## 1. Open Claude Code
 
 Install [Claude Code](https://code.claude.com/docs/en/setup) if needed, following your organization's approved process. The hackathon's [local prerequisites](../setup/README.md#local-tools), including Git and Node.js/npm, are separate requirements.
 
-Open PowerShell in the hackathon repository folder and run:
+In the Code tab's terminal, use PowerShell and navigate to the parent folder where you keep your repositories. If you have not cloned this repository yet, run:
+
+```powershell
+git clone https://github.com/memasanz/rayfin-foundry-hackathon.git
+Set-Location .\rayfin-foundry-hackathon
+```
+
+If you already cloned it, navigate to that existing repository's root instead. From the repository root, start Claude Code:
 
 ```powershell
 claude
