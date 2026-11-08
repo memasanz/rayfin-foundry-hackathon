@@ -10,7 +10,7 @@ Clone this hackathon repo locally. Open the repo folder in your coding agent.
 
 1. [Create a semantic model in Fabric](#1-create-a-semantic-model-in-fabric) - Confirm inputs, load the workbook, and build and validate the model.
 2. [Build a visualization](#2-build-a-visualization) - Scaffold the app, connect to the model, build its pages, and deploy.
-3. [Change the visualization](#3-change-the-visualization) - Update a chart in the app and deploy the change.
+3. [Change the visualization (optional)](#3-change-the-visualization-optional) - Update a chart in the app and deploy the change.
 
 The first two exercises offer a simple goal-based prompt and a detailed prompt; choose one. Then use the visualization-change prompt to refine your app. Review each result before continuing.
 
@@ -281,7 +281,7 @@ and anything you could not verify.
 
 Open the app URL and sign in. Check that all four tabs load live data, the numbers agree with your model, and the design is readable at 1366 px. Keep this app for the next exercise.
 
-## 3. Change the visualization
+## 3. Change the visualization (optional)
 
 Continue in the same chat with the app you just built.
 

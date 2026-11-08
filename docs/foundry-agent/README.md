@@ -13,11 +13,11 @@ Create a Spend Copilot that answers questions about your existing semantic model
 
 ### Inputs
 
-Reuse your alias, tenant, Fabric workspace, and semantic model from the app exercises. The organizer supplies a Foundry project endpoint and an available model deployment. For tool installation, see [Foundry Tools](../setup/README.md#foundry-tools).
+Reuse your alias, tenant, Fabric workspace, and semantic model from the app exercises. Choose an agent name; the organizer supplies a Foundry project endpoint and an available model deployment. The agent should ask for any missing new inputs. For tool installation, see [Foundry Tools](../setup/README.md#foundry-tools).
 
 ### Agent creation prompt
 
-Replace the placeholders and paste this into your coding agent:
+Fill in any new inputs you already know and paste this into your coding agent:
 
 ```text
 Create a read-only Spend Copilot agent in an existing Microsoft Foundry
@@ -25,18 +25,25 @@ project using the supplied project endpoint and model deployment.
 Do not create a new Foundry project or provision new Foundry resources.
 Use our existing Northwind semantic model, with Fabric IQ as its only
 external tool.
-Use the installed skills and my alias for agent and connection names.
+Reuse our existing alias, tenant ID, Fabric workspace, and semantic model
+from this conversation. Do not ask for values already provided.
+Use the installed skills, the requested agent name, and my alias for
+connection names.
 
 Answers should use live model evidence, respect the connected user's
 permissions and requested business-unit filters, and cite the measures
 and scope used. Describe savings as illustrative benchmarks.
 
 Inputs:
-- Alias: <ALIAS>
-- Tenant ID: <TENANT_ID>
-- Fabric workspace name: <WORKSPACE_NAME>
+- Agent name: <AGENT_NAME>
 - Foundry project endpoint: <PROJECT_ENDPOINT>
 - Foundry model deployment name: <MODEL_DEPLOYMENT_NAME>
+
+Before creating the agent or connections, ask me for the agent name,
+Foundry project endpoint, and Foundry model deployment name if they are
+not already provided here or in this conversation. Treat unreplaced
+placeholders as missing inputs. Ask only for missing values; do not
+guess them. If any reused input is unavailable, ask only for that value.
 
 Save the agent definition in our existing project. Test a spend question
 against the model and report the result, agent name, and version.
