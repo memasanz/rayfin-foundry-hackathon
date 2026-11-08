@@ -73,6 +73,40 @@ Install **Foundry Dev Pack** for Foundry command-line tools, the Microsoft Found
 |---|---|---|
 | Foundry Dev Pack | [Windows setup](../install/foundry-devpack-windows.md) | [macOS setup](../install/foundry-devpack-macos.md) |
 
+#### Confirm your installed skills
+
+After installing the Fabric/Power BI and Foundry skills, open a **new chat** in your coding agent with the hackathon folder open and paste:
+
+```text
+Confirm that the hackathon skills are installed and available in this
+coding-agent session:
+- semantic-model-authoring
+- powerbi-report-cli
+- microsoft-foundry
+
+Check your session's available skills, not just your general knowledge.
+Where accessible, inspect each installed SKILL.md and confirm that its
+local supporting files and shared references resolve. Use the locations
+from my chosen installation method; do not assume every method uses the
+same folder. If I installed the full Fabric collection, also list the
+other Fabric skills available in this session.
+
+Return a short table: skill, installation path or plugin source,
+available in this session (yes/no/unknown), supporting files
+(pass/fail/unknown), and next action.
+Distinguish files present on disk from skills discoverable in this chat.
+Do not claim success from folder names or installation logs alone.
+Report anything you cannot verify.
+
+This is a read-only check. Do not invoke skill workflows, install or
+update anything, change settings, sign in, or deploy resources.
+Do not print tokens or secrets. Keep skill availability separate from
+MCP configuration, local development tools, authentication, permissions,
+and live Fabric/Foundry connectivity.
+```
+
+If you have only completed Fabric/Power BI installation, Foundry may still be missing; complete [Foundry Tools](#foundry-tools) and repeat the check. For other missing or undiscoverable skills, return to your chosen installation guide and follow the reported next action.
+
 [Next: Build our App](../build-app/README.md)
 
 [Back to the hackathon](../../README.md)

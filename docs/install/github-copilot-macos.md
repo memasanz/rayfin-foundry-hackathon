@@ -66,6 +66,8 @@ The agent should check its available tools and skills and report capabilities fr
 
 If either plugin is missing or cannot be confirmed, return to **Install both plugins**, check its installation, and repeat the check in a new chat. This checks session availability, not Fabric authentication or connectivity.
 
+After completing [Foundry Tools](../setup/README.md#foundry-tools), use the [installed-skills verification prompt](../setup/README.md#confirm-your-installed-skills) to check all three hackathon skills and their supporting files.
+
 ## Alternative: install through Copilot CLI
 
 Use this **instead of** the UI installation steps if you prefer the terminal. It still uses the Fabric marketplace; if marketplace access is blocked, use a direct installation option below, where permitted.
@@ -144,6 +146,8 @@ copilot skill add .skill-sources/azure-skills/skills
 
 This includes **Fabric skills, `semantic-model-authoring`, `powerbi-report-cli`, and `microsoft-foundry`**, plus the Azure repository's other skills. Keep both clones in place and start a **new Copilot chat**. Cloning alone does not configure MCP connections, tooling, authentication, or permissions.
 
+Paste the [installed-skills verification prompt](../setup/README.md#confirm-your-installed-skills) in that new chat to check discovery and supporting files.
+
 ## If marketplace access is blocked
 
 If your organization permits direct GitHub downloads, use **Agent Package Manager (APM)** instead of the marketplace. This does not bypass organization policy; if these downloads are also blocked, contact the hackathon organizer.
@@ -195,6 +199,8 @@ Can you confirm that the APM-installed semantic-model-authoring
 and powerbi-report-cli skills are available in this session?
 Check the installed skill files and report anything you cannot verify.
 ```
+
+After completing [Foundry Tools](../setup/README.md#foundry-tools), repeat the check with the [installed-skills verification prompt](../setup/README.md#confirm-your-installed-skills) to include `microsoft-foundry`.
 
 References: [VS Code agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins), [VS Code agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills), [Copilot CLI skills](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills), [Microsoft Fabric skills](https://github.com/microsoft/skills-for-fabric), and [APM installation](https://microsoft.github.io/apm/getting-started/installation/).
 

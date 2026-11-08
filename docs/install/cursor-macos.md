@@ -57,6 +57,10 @@ APM installs the Fabric/Power BI collection and the Foundry skill, preserving an
 
 After your chosen installation, restart Cursor and reopen the hackathon folder. These options install skill files, not local development tools, authentication, or permissions. Continue with [Foundry Tools](../setup/README.md#foundry-tools) for the separate Foundry tooling setup.
 
+## 3. Verify the skills
+
+Open a **new Cursor chat** with the hackathon folder open and paste the [installed-skills verification prompt](../setup/README.md#confirm-your-installed-skills). It checks `semantic-model-authoring`, `powerbi-report-cli`, and `microsoft-foundry`, including session discovery and supporting files, without installing or changing anything.
+
 ## First run in Cursor
 
 ### Clone and open the hackathon repository
