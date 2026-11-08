@@ -42,7 +42,7 @@ Your alias keeps your work separate from other participants in the shared worksp
 
 Use your own items and check before replacing existing work. Let the agent use the installed Fabric skills and the app's generated guidance for implementation details.
 
-## 1. Create a semantic model in Fabric
+## 1. Create a semantic model in Fabric (~ 20 minutes)
 
 Use the included workbook to create a schema-enabled lakehouse and a validated Direct Lake semantic model.
 
@@ -60,7 +60,7 @@ Choose **one** option, fill in any inputs you already know, and paste it into yo
 
 | Option | Approach |
 |---|---|
-| [Let the agent decide](#model-option-1-let-the-agent-decide) | Describe the goal and let the agent choose the model design from the workbook. Results may differ. |
+| [Let the agent decide](#model-option-1-let-the-agent-decide) | Let the agent choose the design, with required app measures and columns, limited scope, and a ~20-minute time budget. |
 | [Detailed instructions](#model-option-2-detailed-instructions) | Specify the tables, relationships, measures, and roles for a consistent lab result. |
 
 Both options use the same workbook and inputs. Do not run both.
