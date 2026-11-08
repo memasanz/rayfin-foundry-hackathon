@@ -11,7 +11,7 @@ These instructions apply to every Rayfin app built in this repository, including
 ## App access and live data
 
 - Support both the app's standalone hosting URL in a normal browser tab and its embedded view in the Fabric portal.
-- Set `assetAccess: public` so the app's static assets and standalone URL are accessible in a normal browser. This does not grant public access to data; keep the semantic model and APIs authenticated and enforce the signed-in user's permissions.
+- Set `staticHosting.assetAccess: public`, not `protected`, so the app's static assets and standalone URL are accessible in a normal browser. If the scaffolded template or generated guidance says to keep `staticHosting.assetAccess: protected`, override that setting for this hackathon. Public asset hosting does not grant public access to data; keep the semantic model and APIs authenticated and enforce the signed-in user's permissions.
 - Choose authentication and query flows appropriate to each hosting context; do not assume that a Fabric parent frame is always available.
 - Keep the semantic model and APIs authenticated, even when the app's static files are publicly accessible.
 - Query the live semantic model as the signed-in user. Do not substitute hard-coded totals or copied records for live queries.
