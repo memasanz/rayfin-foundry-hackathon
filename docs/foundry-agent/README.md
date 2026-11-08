@@ -87,7 +87,7 @@ Add a Spend Copilot chat panel alongside the app's existing dashboards.
 
 ### Before connecting
 
-The organizer supplies an approved **single-tenant SPA client ID** with delegated Foundry access (`https://ai.azure.com/user_impersonation`) and any required consent. They must register your app's actual deployed HTTPS root URL as a SPA redirect URI. Use the hosting URL, not the Fabric portal URL.
+The organizer supplies an approved **single-tenant SPA client ID** with delegated Foundry access (`https://ai.azure.com/user_impersonation`) and any required consent. They must register the exact deployed HTTPS redirect URI required by the implemented sign-in flow as a SPA redirect URI. Use the app's hosting URL, not the Fabric portal URL.
 
 Each user needs permission to invoke the agent and access the model. The Foundry sign-in is separate from the dashboard's Fabric sign-in. No client secret is needed.
 
@@ -95,17 +95,19 @@ The functions workflow requires **Azure Functions Core Tools v4** on the develop
 
 ### App integration prompt
 
-Continue in the same chat and replace the client ID:
+Continue in the same chat and provide the client ID if you already know it:
 
 ```text
 Connect the Spend Copilot we just created to our existing Fabric app.
+Do not create another agent or Foundry project.
 
 Inputs:
 - Organizer-supplied SPA client ID: <SHARED_SPA_CLIENT_ID>
 
-Reuse our app project, alias, tenant, workspace, semantic model, Foundry
-project endpoint, and agent name. Use the generated Rayfin guidance and
-installed Foundry skills for the implementation.
+Reuse our app project, alias, tenant, Fabric workspace, semantic model,
+Foundry project endpoint, and agent name from this conversation.
+Ask only for missing inputs. Treat unreplaced placeholders as missing.
+Use the generated Rayfin guidance and installed Foundry skills.
 
 Add a responsive Spend Copilot panel alongside the four existing tabs.
 Include a question box and starter questions: "Explain this view",
@@ -116,10 +118,17 @@ Add Connect to Foundry, Change account, and Disconnect controls using
 the organizer's SPA registration. Show the connected Foundry account.
 Use supported MSAL sign-in with PKCE and memory-only token storage,
 including the supported popup flow when the app is embedded in Fabric.
-Ask the organizer to register the actual app-root callback if needed.
+Keep Foundry sign-in separate from Fabric sign-in. Handle the authentication
+callback end to end, completing sign-in and returning control to the app.
+Verify this works at the standalone hosting URL and when embedded in Fabric.
+Do not assume a Fabric parent frame is available.
+
+Identify the exact redirect URI required by the implemented flow.
+If it is not registered, ask the organizer to register it before testing.
 
 Connect through an authenticated Rayfin Function using the signed-in
 user's Foundry identity. Preserve their permissions when querying Fabric IQ.
+Do not use the app owner's identity or put client secrets in browser code.
 
 Pass the current tab and business-unit selection to the agent as context.
 Display its answers and references in the chat panel.
@@ -129,15 +138,21 @@ and retryable errors. Prevent duplicate sends. Keep tokens and chat
 in memory only, and reset the conversation when the account or view changes
 without showing late responses from the previous context.
 
-Test the integration, run the project's build, lint, and tests, then deploy
-to the same Fabric App item. Share the URL and what you verified.
+Keep staticHosting.assetAccess: public for normal-browser access.
+Only static assets are public; data and APIs must remain authenticated.
+
+Run the project's build, lint, and tests. Verify sign-in callbacks, agent
+answers using live model data, and existing dashboards in both hosting
+contexts. Ask for interactive sign-in and deployment approval when needed.
+Deploy to the existing Fabric App item only after approval. Share the URL,
+what you verified, and any remaining limitations.
 ```
 
 ### Check the integration
 
-Open the deployed app **inside Fabric** and:
+Open the deployed app at its **standalone hosting URL** and **inside Fabric**. In each context:
 
-1. Connect to Foundry and confirm the selected account.
+1. Connect to Foundry, confirm the sign-in callback completes, and confirm the selected account.
 2. Ask "What is our total spend?" and compare with the model for that user.
 3. Select Aerospace Components and ask "Explain this view".
 4. Confirm the answer uses that scope and includes model-derived evidence.
