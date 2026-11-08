@@ -195,7 +195,22 @@ Choose **one** option and paste it into your coding agent:
 
 ```text
 Build and deploy a Rayfin app using the semantic model we just created.
-Use my alias in the app name.
+Reuse our existing alias, tenant, Fabric workspace, and semantic model.
+Ask only for missing inputs.
+
+Scaffold spend-diagnostic-<ALIAS> from the Rayfin dataapp template.
+Then read the generated AGENTS.md and relevant .agents/skills/, following
+them alongside the repository root AGENTS.md for setup, authentication,
+app implementation, validation, and deployment.
+
+Register a fabric-semanticmodel connector named spendmodel for the
+existing model using the generated guidance. Prove live connectivity,
+discover the schema, and read measure descriptions before building visuals
+or writing queries. Choose visuals based on the actual model.
+
+If a measure needed for the chosen visuals is missing, use the
+semantic-model-authoring skill to add and validate it in my model.
+Validate every final app query with the template-prescribed tools.
 
 Build a polished UI with four tabs: Executive overview, Category deep-dive,
 Supplier concentration, and Opportunity. Choose useful visuals for each
