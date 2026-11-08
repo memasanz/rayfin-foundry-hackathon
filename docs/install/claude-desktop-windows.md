@@ -29,7 +29,7 @@ Complete sign-in and review any workspace trust prompt. Wait until Claude's inte
 
 ## 2. Add the Fabric marketplace
 
-At the **Claude Code chat prompt**, enter:
+At the **Claude Code terminal**, enter:
 
 ```text
 /plugin marketplace add microsoft/skills-for-fabric
