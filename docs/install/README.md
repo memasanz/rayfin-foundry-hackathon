@@ -8,7 +8,7 @@ Choose your Fabric tool and operating system:
 |---|---|---|
 | GitHub Copilot in VS Code | [Windows setup](github-copilot-windows.md) | [macOS setup](github-copilot-macos.md) |
 | Cursor IDE | [Windows setup](cursor-windows.md) | [macOS setup](cursor-macos.md) |
-| Claude | [Windows setup (Claude Code)](claude-desktop-windows.md) | [macOS setup (Claude Desktop chat)](claude-desktop-macos.md) |
+| Claude Code | [Windows setup](claude-desktop-windows.md) | [macOS setup](claude-desktop-macos.md) |
 
 For the Foundry agent exercises, also install **Foundry Dev Pack**:
 

@@ -4,9 +4,15 @@ These instructions apply to every Rayfin app built in this repository, including
 
 ## Use the appropriate guidance
 
+- Read the relevant exercise README before starting. It defines the goal, required inputs, item names, safeguards, and acceptance criteria; skills and templates define the implementation mechanics.
 - Scaffold the app first, then read its generated guidance and the relevant installed skills.
 - Use the generated app guidance and current official documentation for version-specific implementation details.
 - Diagnose the actual failure before introducing a workaround; do not assume that a fix from another app or tool version is required.
+
+## Working style and inputs
+
+- Implement through APIs, CLIs, and files rather than asking the user to perform routine development steps. Ask for human action when interactive sign-in, tenant settings, or explicit approval is required.
+- Reuse confirmed inputs from the conversation. Ask only for missing values required by the exercise, and treat unreplaced placeholders as missing. Never invent IDs, endpoints, or credentials.
 
 ## App access and live data
 
@@ -15,6 +21,8 @@ These instructions apply to every Rayfin app built in this repository, including
 - Choose authentication and query flows appropriate to each hosting context; do not assume that a Fabric parent frame is always available.
 - Keep the semantic model and APIs authenticated, even when the app's static files are publicly accessible.
 - Query the live semantic model as the signed-in user. Do not substitute hard-coded totals or copied records for live queries.
+- Keep dataset copies out of `src/` and `public/`.
+- If a query fails, show a safe error state with its category, message, and request ID when available. Do not replace failed queries with mock data or expose credentials or sensitive diagnostic details.
 
 ## Identity and authentication
 
@@ -26,7 +34,9 @@ These instructions apply to every Rayfin app built in this repository, including
 ## Validate and deploy
 
 - Confirm live connectivity before building the visualizations.
+- Validate each phase with an appropriate query, build, test, or CLI check against the exercise's acceptance criteria and any stated control totals. Fix failed checks before continuing; if blocked, report the blocker rather than claiming success.
 - Run the app's prescribed build, lint, and tests. Verify sign-in, live data, and user access in both hosting contexts.
+- Do not treat local success as proof of deployed identity permissions, or Admin/Member access as proof of Viewer-level row-level security. Verify with the intended user role and hosting context, and report any checks that could not be completed.
 - Ask the user to complete interactive sign-in when needed. Do not force deployments without the user's explicit approval.
 - Report what was actually verified and any remaining limitations.
 - Keep credentials and local environment or deployment files out of Git.
