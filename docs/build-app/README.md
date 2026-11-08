@@ -6,7 +6,7 @@ Turn a synthetic procurement workbook into a live Fabric app for exploring spend
 
 ## How to work through the lab
 
-Open the hackathon folder in your coding agent.
+Clone this hackathon repo locally. Open the repo folder in your coding agent.
 
 1. [Create a semantic model in Fabric](#1-create-a-semantic-model-in-fabric) - Confirm inputs, load the workbook, and build and validate the model.
 2. [Build a visualization](#2-build-a-visualization) - Scaffold the app, connect to the model, build its pages, and deploy.
@@ -202,10 +202,12 @@ semantic model we created in the previous task. Use my existing alias,
 tenant, workspace, and model IDs; ask for anything missing.
 
 Scaffold spend-diagnostic-<ALIAS> from the Rayfin dataapp template in
-my workspace. Scaffold first, then read the generated AGENTS.md and
-relevant .agents/skills/. Follow them for version-specific setup,
-dependencies, connector registration, query validation, app code,
-and deployment. Use my alias so the app does not collide with others.
+my workspace. Scaffold first, then read the repository root AGENTS.md,
+the generated AGENTS.md, and the relevant .agents/skills/. Follow them
+for version-specific setup, dependencies, connector registration, query
+validation, app code, and deployment. The repository root AGENTS.md
+governs how the hosting URL queries the semantic model. Use my alias
+so the app does not collide with others.
 
 Register a fabric-semanticmodel connector named spendmodel for the
 existing model. Prove live connectivity, discover its schema, and read
@@ -245,9 +247,13 @@ $M and % to one decimal, loading, empty and error states on every visual
 (errors show category, message and request ID), readable at 1366 px.
 Label every savings figure as an illustrative benchmark.
 
-Keep staticHosting.assetAccess: protected and the template's Fabric
-sign-in flow. Keep credentials and local environment/deployment files
-out of Git. Ask me to complete interactive Rayfin sign-in when needed.
+The hosting URL must open outside the Fabric portal and query the
+semantic model as the signed-in user. Follow the repository root
+AGENTS.md: public static hosting, Fabric sign-in from a button on that
+URL, and delegated connector queries there. Inside the portal, the
+template iframe queries can stay. Do not copy query results into the
+frontend. Keep credentials and local environment/deployment files out
+of Git. Ask me to complete interactive Rayfin sign-in when needed.
 Do not use npx rayfin up --force without asking me.
 
 Run the template-prescribed build, lint, and tests, then deploy with

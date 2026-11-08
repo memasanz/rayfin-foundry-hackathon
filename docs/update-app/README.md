@@ -1,4 +1,4 @@
-# 4. Update our App
+# 4. Update our App with Writeback
 
 Continue with the app after [connecting your Foundry agent](../foundry-agent/README.md#2-connect-the-agent-to-your-fabric-app).
 
