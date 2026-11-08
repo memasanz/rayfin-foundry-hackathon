@@ -32,8 +32,6 @@ Copy-Item .skill-sources\azure-skills\skills\microsoft-foundry .agents\skills -R
 
 The skills now sit directly in folders such as `.agents\skills\powerbi-report-cli` and `.agents\skills\microsoft-foundry`, rather than inside nested repository folders. Keep `.agents\common` and `.agents\mcp-setup`: Fabric skills reference these shared files and setup guidance. Copying them does not configure MCP connections. The source clones and installed content are ignored by this hackathon's `.gitignore`.
 
-Already used the earlier nested layout? Move the `skills-for-fabric` and `azure-skills` repository folders from `.agents\skills` into `.skill-sources`, then skip the two `git clone` commands and run the copy commands. Leave other skill folders alone.
-
 In Cursor's Skills view, look for **`powerbi-report-cli`** for report authoring. **`powerbi-authoring`** is a marketplace plugin name, not an individual skill.
 
 ### Option 2: APM backup
