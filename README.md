@@ -10,6 +10,8 @@ The exercises guide you from **Excel data -> Fabric semantic model -> interactiv
 
 ![Workflow diagram showing an AI coding agent processing the Northwind procurement workbook in Microsoft Fabric, building a Rayfin app, and connecting a Foundry Spend Copilot through a Rayfin Function and Fabric IQ. The flow continues from the Fabric lakehouse and semantic model to the interactive app and AI assistant, then saves opportunities to a Rayfin database. It presents a practical, step-by-step data and app-building workflow.](/docs/hackathon-approach-diagram.png)
 
+![Spend diagnostic app showing the executive overview dashboard and Spend Copilot panel.](docs/images/spend-diagnostic-executive-overview.png)
+
 ## Let's get started
 
 1. **[Setup Tooling](docs/setup/README.md)** - Prepare your local, Fabric, and Foundry tools.
