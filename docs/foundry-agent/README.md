@@ -147,7 +147,7 @@ call broadcastResponseToMainFrame() from
 Do not start Fabric sign-in, routing, handleRedirectPromise, or React
 on that visit. Otherwise, boot the dashboard as usual.
 Bundle the bridge on the app's own origin. Follow the SDK's callback
-hosting requirements, including no COOP headers and Cache-Control: no-store.
+hosting requirements, including no COOP headers.
 
 Keep Connect disabled while sign-in or cancellation cleanup is active.
 Enable Continue only when the relay handlers are ready. Provide progress,
