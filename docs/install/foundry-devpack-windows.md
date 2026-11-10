@@ -2,6 +2,8 @@
 
 Foundry Dev Pack installs the developer tools for building with Microsoft Foundry. This is separate from the Fabric and Power BI skill installation.
 
+For the official setup instructions, see Microsoft Learn: [Prepare your development environment](https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/install-cli-sdk?tabs=windows%2Cpython%2Cazd-ai).
+
 ## Before you start
 
 - Install **Visual Studio Code** first if you want the Dev Pack to add the Microsoft Foundry Toolkit extension.
@@ -59,6 +61,6 @@ Do not install tools, sign in, or create Azure resources.
 
 Installation does not sign you in, create Azure resources, or grant access to a Foundry project. Before building, use the Azure subscription and Foundry project provided by the organizer. Git, your application's language runtime, and scenario-specific SDK packages are separate prerequisites.
 
-References: [Foundry Dev Pack announcement](https://devblogs.microsoft.com/foundry/foundry-devpack-announcement/), [official environment setup](https://learn.microsoft.com/azure/foundry/how-to/develop/install-cli-sdk), and [Microsoft Foundry Skill](https://learn.microsoft.com/azure/foundry/how-to/develop/use-microsoft-foundry-skill).
+References: [Foundry Dev Pack announcement](https://devblogs.microsoft.com/foundry/foundry-devpack-announcement/) and [Microsoft Foundry Skill](https://learn.microsoft.com/azure/foundry/how-to/develop/use-microsoft-foundry-skill).
 
 [Back to the hackathon](../../README.md)
