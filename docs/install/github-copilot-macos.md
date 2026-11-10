@@ -2,7 +2,20 @@
 
 ## Before you start
 
-Open the hackathon folder in VS Code and sign in to GitHub Copilot. Use the **Copilot** harness in Chat for installation and verification.
+Clone and open the hackathon repository before installing skills. The hackathon's [local prerequisites](../setup/README.md#local-tools), including Git and Node.js/npm, are separate requirements.
+
+### Clone and open the hackathon repository
+
+Open Terminal and navigate to the parent folder where you keep your repositories. If you have not cloned this repository yet, run:
+
+```sh
+git clone https://github.com/memasanz/rayfin-foundry-hackathon.git
+cd rayfin-foundry-hackathon
+```
+
+If you already cloned it, navigate to that existing repository's root instead. In VS Code, use **File > Open Folder** to open that `rayfin-foundry-hackathon` folder, then sign in to GitHub Copilot. Keep this folder as your workspace for installation and verification, and use the **Copilot** harness in Chat.
+
+### Choose a skill installation option
 
 Choose **one of four options** to install the skills:
 

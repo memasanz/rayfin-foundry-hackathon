@@ -6,7 +6,7 @@ Use the **terminal in Claude Desktop's Code tab** for these installation steps, 
 
 Open Claude Desktop and sign in. Switch to the **Code** tab and open its **Terminal** pane. Clone the hackathon repository there, then start Claude Code from the repository root and keep that folder as your workspace for installation and verification.
 
-## 1. Open Claude Code
+## 1. Clone the hackathon repository and open Claude Code
 
 Install [Claude Code](https://code.claude.com/docs/en/setup) if needed, following your organization's approved process. The hackathon's [local prerequisites](../setup/README.md#local-tools), including Git and Node.js/npm, are separate requirements.
 
