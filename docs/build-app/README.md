@@ -9,7 +9,7 @@ Turn a synthetic procurement workbook into a live Fabric app for exploring spend
 Clone this hackathon repo locally. Open the repo folder in your coding agent.
 
 1. [Create a semantic model in Fabric](#1-create-a-semantic-model-in-fabric) (~20 minutes) - Confirm inputs, load the workbook, and build and validate the model.
-2. [Build a visualization](#2-build-a-visualization) - Scaffold the app, connect to the model, build its pages, and deploy.
+2. [Build a visualization](#2-build-a-visualization) (~40 minutes) - Scaffold the app, connect to the model, build its pages, and deploy.
 3. [Change the visualization (optional)](#3-change-the-visualization-optional) - Update a chart in the app and deploy the change.
 
 The semantic-model exercise offers a simple goal-based prompt and a detailed prompt; choose one. The app exercise uses a single scoped prompt. Optionally, use the visualization-change prompt to refine your app. Review each result before continuing.
