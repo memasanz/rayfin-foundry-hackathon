@@ -29,6 +29,12 @@ It also installs these integrations when their host apps are present:
 
 The Dev Pack does **not** install VS Code or GitHub Copilot App.
 
+![Successful Foundry Dev Pack installation showing included tools and skill locations](images/foundry-devpack-windows-installed.png)
+
+*Example Windows installation output; versions and integrations may vary.*
+
+The installer places the **Microsoft Foundry Skill** in `%USERPROFILE%\.agents\skills\microsoft-foundry`, and also in `%USERPROFILE%\.claude\skills` when Claude Code is available. Copilot can discover the shared `.agents\skills` location; the skill does not need a separate copy in `.copilot\skills`.
+
 ## 2. Reopen VS Code and verify
 
 Save your work, **close all VS Code windows**, and reopen VS Code so it picks up PATH changes. Open the hackathon folder and a new PowerShell terminal.

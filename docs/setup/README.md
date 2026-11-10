@@ -67,7 +67,7 @@ Choose your tool and operating system:
 
 ### Foundry Tools
 
-Install **Foundry Dev Pack** for Foundry command-line tools, the Microsoft Foundry Skill, and editor integrations. This is separate from the Fabric and Power BI skills above.
+Install **Foundry Dev Pack** for Foundry command-line tools, the Microsoft Foundry Skill, and editor integrations. This is separate from the Fabric and Power BI skills above. See Microsoft's official [Prepare your development environment](https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/install-cli-sdk?tabs=windows%2Cpython%2Cazd-ai) guide for details.
 
 | Tool | Windows | macOS |
 |---|---|---|
