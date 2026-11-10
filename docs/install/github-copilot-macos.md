@@ -15,6 +15,9 @@ Choose **one of four options** to install the skills:
 
 1. Press **Command+Shift+P**, run **Chat: Open Customizations**, and select **Browse**.
 2. Open the source menu and select **Configure Marketplaces**.
+
+![All Sources menu with Configure Marketplaces highlighted.](../images/github-copilot-configure-marketplaces.png)
+
 3. Select **Add Marketplace** and enter:
 
    ```text
@@ -66,18 +69,19 @@ The agent should check its available tools and skills and report capabilities fr
 
 If either plugin is missing or cannot be confirmed, return to **Install both plugins**, check its installation, and repeat the check in a new chat. This checks session availability, not Fabric authentication or connectivity.
 
-Open a **new Copilot chat** with the hackathon folder open and paste this prompt to check all three hackathon skills, whether installed earlier or just now. This also works with the clone and APM installation options below:
+Open a **new Copilot chat** with the hackathon folder open and paste this prompt to check the Fabric and Power BI skills, whether installed earlier or just now. This also works with the clone and APM installation options below:
 
 ```text
 Check whether these skills are available in this session:
 - semantic-model-authoring
 - powerbi-report-cli
-- microsoft-foundry
 
 Use your available skill list and report each as available, missing,
 or unable to verify. Do not assume availability from general knowledge.
 Do not install or update anything, invoke skill workflows, or change settings.
 ```
+
+The `microsoft-foundry` skill is not required at this step. After completing [Foundry Tools](../setup/README.md#foundry-tools), use the [installed-skills verification prompt](../setup/README.md#confirm-your-installed-skills) to check all three hackathon skills.
 
 ## Alternative: install through Copilot CLI
 

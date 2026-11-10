@@ -1,8 +1,6 @@
 # Foundry Dev Pack - Windows
 
-Foundry Dev Pack installs the developer tools for building with Microsoft Foundry. This is separate from the Fabric and Power BI skill installation.
-
-For the official setup instructions, see Microsoft Learn: [Prepare your development environment](https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/install-cli-sdk?tabs=windows%2Cpython%2Cazd-ai).
+Foundry Dev Pack installs the developer tools for building with Microsoft Foundry. See Microsoft Learn's [Prepare your development environment](https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/install-cli-sdk?tabs=windows%2Cpython%2Cazd-ai) for the official setup instructions. This is separate from the Fabric and Power BI skill installation.
 
 ## Before you start
 
